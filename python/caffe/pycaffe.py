@@ -133,6 +133,7 @@ def _Net_forward(self, blobs=None, start=None, end=None, **kwargs):
     # Unpack blobs to extract
     return {out: self.blobs[out].data for out in outputs}
 
+# ryan's hacking here
 def _Net_forward_threaded(self, blobs=None, start=None, end=None, **kwargs):
     """
     Forward pass: prepare inputs and run the net forward.

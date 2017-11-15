@@ -259,7 +259,7 @@ class Net {
     after_backward_.push_back(value);
   }
 
- // protected:
+ protected:
   // Helpers for Init.
   /// @brief Append a new top blob to the net.
   void AppendTop(const NetParameter& param, const int layer_id,

@@ -1,0 +1,88 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CAFFE_NET_HPP_	/home/ryan/caffe/include/caffe/net.hpp	/^#define CAFFE_NET_HPP_$/;"	macro	line:2
+caffe	/home/ryan/caffe/include/caffe/net.hpp	/^namespace caffe {$/;"	namespace	line:15
+Net	/home/ryan/caffe/include/caffe/net.hpp	/^class Net {$/;"	class	line:24	namespace:caffe
+~Net	/home/ryan/caffe/include/caffe/net.hpp	/^  virtual ~Net() {}$/;"	function	line:29	class:caffe::Net	signature:()
+ForwardPrefilled	/home/ryan/caffe/include/caffe/net.hpp	/^  const vector<Blob<Dtype>*>& ForwardPrefilled(Dtype* loss = NULL) {$/;"	function	line:40	class:caffe::Net	signature:(Dtype* loss = NULL)
+ForwardBackward	/home/ryan/caffe/include/caffe/net.hpp	/^  Dtype ForwardBackward() {$/;"	function	line:92	class:caffe::Net	signature:()
+name	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const string& name() const { return name_; }$/;"	function	line:130	class:caffe::Net	signature:() const
+layer_names	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<string>& layer_names() const { return layer_names_; }$/;"	function	line:132	class:caffe::Net	signature:() const
+blob_names	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<string>& blob_names() const { return blob_names_; }$/;"	function	line:134	class:caffe::Net	signature:() const
+blobs	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<shared_ptr<Blob<Dtype> > >& blobs() const {$/;"	function	line:136	class:caffe::Net	signature:() const
+layers	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<shared_ptr<Layer<Dtype> > >& layers() const {$/;"	function	line:140	class:caffe::Net	signature:() const
+phase	/home/ryan/caffe/include/caffe/net.hpp	/^  inline Phase phase() const { return phase_; }$/;"	function	line:144	class:caffe::Net	signature:() const
+bottom_vecs	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<vector<Blob<Dtype>*> >& bottom_vecs() const {$/;"	function	line:149	class:caffe::Net	signature:() const
+top_vecs	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<vector<Blob<Dtype>*> >& top_vecs() const {$/;"	function	line:156	class:caffe::Net	signature:() const
+top_ids	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<int> & top_ids(int i) const {$/;"	function	line:160	class:caffe::Net	signature:(int i) const
+bottom_ids	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<int> & bottom_ids(int i) const {$/;"	function	line:166	class:caffe::Net	signature:(int i) const
+bottom_need_backward	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<vector<bool> >& bottom_need_backward() const {$/;"	function	line:171	class:caffe::Net	signature:() const
+blob_loss_weights	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<Dtype>& blob_loss_weights() const {$/;"	function	line:174	class:caffe::Net	signature:() const
+layer_need_backward	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<bool>& layer_need_backward() const {$/;"	function	line:177	class:caffe::Net	signature:() const
+params	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<shared_ptr<Blob<Dtype> > >& params() const {$/;"	function	line:181	class:caffe::Net	signature:() const
+learnable_params	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<Blob<Dtype>*>& learnable_params() const {$/;"	function	line:184	class:caffe::Net	signature:() const
+params_lr	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<float>& params_lr() const { return params_lr_; }$/;"	function	line:188	class:caffe::Net	signature:() const
+has_params_lr	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<bool>& has_params_lr() const { return has_params_lr_; }$/;"	function	line:189	class:caffe::Net	signature:() const
+params_weight_decay	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<float>& params_weight_decay() const {$/;"	function	line:191	class:caffe::Net	signature:() const
+has_params_decay	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<bool>& has_params_decay() const {$/;"	function	line:194	class:caffe::Net	signature:() const
+param_names_index	/home/ryan/caffe/include/caffe/net.hpp	/^  const map<string, int>& param_names_index() const {$/;"	function	line:197	class:caffe::Net	signature:() const
+param_owners	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<int>& param_owners() const { return param_owners_; }$/;"	function	line:200	class:caffe::Net	signature:() const
+param_display_names	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<string>& param_display_names() const {$/;"	function	line:201	class:caffe::Net	signature:() const
+num_inputs	/home/ryan/caffe/include/caffe/net.hpp	/^  inline int num_inputs() const { return net_input_blobs_.size(); }$/;"	function	line:205	class:caffe::Net	signature:() const
+num_outputs	/home/ryan/caffe/include/caffe/net.hpp	/^  inline int num_outputs() const { return net_output_blobs_.size(); }$/;"	function	line:206	class:caffe::Net	signature:() const
+input_blobs	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<Blob<Dtype>*>& input_blobs() const {$/;"	function	line:207	class:caffe::Net	signature:() const
+output_blobs	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<Blob<Dtype>*>& output_blobs() const {$/;"	function	line:210	class:caffe::Net	signature:() const
+input_blob_indices	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<int>& input_blob_indices() const {$/;"	function	line:213	class:caffe::Net	signature:() const
+output_blob_indices	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<int>& output_blob_indices() const {$/;"	function	line:216	class:caffe::Net	signature:() const
+set_debug_info	/home/ryan/caffe/include/caffe/net.hpp	/^  void set_debug_info(const bool value) { debug_info_ = value; }$/;"	function	line:224	class:caffe::Net	signature:(const bool value)
+Callback	/home/ryan/caffe/include/caffe/net.hpp	/^  class Callback {$/;"	class	line:238	class:caffe::Net
+before_forward	/home/ryan/caffe/include/caffe/net.hpp	/^  const vector<Callback*>& before_forward() const { return before_forward_; }$/;"	function	line:245	class:caffe::Net	signature:() const
+add_before_forward	/home/ryan/caffe/include/caffe/net.hpp	/^  void add_before_forward(Callback* value) {$/;"	function	line:246	class:caffe::Net	signature:(Callback* value)
+after_forward	/home/ryan/caffe/include/caffe/net.hpp	/^  const vector<Callback*>& after_forward() const { return after_forward_; }$/;"	function	line:249	class:caffe::Net	signature:() const
+add_after_forward	/home/ryan/caffe/include/caffe/net.hpp	/^  void add_after_forward(Callback* value) {$/;"	function	line:250	class:caffe::Net	signature:(Callback* value)
+before_backward	/home/ryan/caffe/include/caffe/net.hpp	/^  const vector<Callback*>& before_backward() const { return before_backward_; }$/;"	function	line:253	class:caffe::Net	signature:() const
+add_before_backward	/home/ryan/caffe/include/caffe/net.hpp	/^  void add_before_backward(Callback* value) {$/;"	function	line:254	class:caffe::Net	signature:(Callback* value)
+after_backward	/home/ryan/caffe/include/caffe/net.hpp	/^  const vector<Callback*>& after_backward() const { return after_backward_; }$/;"	function	line:257	class:caffe::Net	signature:() const
+add_after_backward	/home/ryan/caffe/include/caffe/net.hpp	/^  void add_after_backward(Callback* value) {$/;"	function	line:258	class:caffe::Net	signature:(Callback* value)
+name_	/home/ryan/caffe/include/caffe/net.hpp	/^  string name_;$/;"	member	line:284	class:caffe::Net
+phase_	/home/ryan/caffe/include/caffe/net.hpp	/^  Phase phase_;$/;"	member	line:286	class:caffe::Net
+layers_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<shared_ptr<Layer<Dtype> > > layers_;$/;"	member	line:288	class:caffe::Net
+layer_names_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<string> layer_names_;$/;"	member	line:289	class:caffe::Net
+layer_names_index_	/home/ryan/caffe/include/caffe/net.hpp	/^  map<string, int> layer_names_index_;$/;"	member	line:290	class:caffe::Net
+layer_need_backward_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<bool> layer_need_backward_;$/;"	member	line:291	class:caffe::Net
+blobs_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<shared_ptr<Blob<Dtype> > > blobs_;$/;"	member	line:293	class:caffe::Net
+blob_names_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<string> blob_names_;$/;"	member	line:294	class:caffe::Net
+blob_names_index_	/home/ryan/caffe/include/caffe/net.hpp	/^  map<string, int> blob_names_index_;$/;"	member	line:295	class:caffe::Net
+blob_need_backward_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<bool> blob_need_backward_;$/;"	member	line:296	class:caffe::Net
+bottom_vecs_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<vector<Blob<Dtype>*> > bottom_vecs_;$/;"	member	line:300	class:caffe::Net
+bottom_id_vecs_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<vector<int> > bottom_id_vecs_;$/;"	member	line:301	class:caffe::Net
+bottom_need_backward_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<vector<bool> > bottom_need_backward_;$/;"	member	line:302	class:caffe::Net
+top_vecs_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<vector<Blob<Dtype>*> > top_vecs_;$/;"	member	line:304	class:caffe::Net
+top_id_vecs_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<vector<int> > top_id_vecs_;$/;"	member	line:305	class:caffe::Net
+blob_loss_weights_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<Dtype> blob_loss_weights_;$/;"	member	line:308	class:caffe::Net
+param_id_vecs_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<vector<int> > param_id_vecs_;$/;"	member	line:309	class:caffe::Net
+param_owners_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<int> param_owners_;$/;"	member	line:310	class:caffe::Net
+param_display_names_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<string> param_display_names_;$/;"	member	line:311	class:caffe::Net
+param_layer_indices_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<pair<int, int> > param_layer_indices_;$/;"	member	line:312	class:caffe::Net
+param_names_index_	/home/ryan/caffe/include/caffe/net.hpp	/^  map<string, int> param_names_index_;$/;"	member	line:313	class:caffe::Net
+net_input_blob_indices_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<int> net_input_blob_indices_;$/;"	member	line:315	class:caffe::Net
+net_output_blob_indices_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<int> net_output_blob_indices_;$/;"	member	line:316	class:caffe::Net
+net_input_blobs_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<Blob<Dtype>*> net_input_blobs_;$/;"	member	line:317	class:caffe::Net
+net_output_blobs_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<Blob<Dtype>*> net_output_blobs_;$/;"	member	line:318	class:caffe::Net
+params_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<shared_ptr<Blob<Dtype> > > params_;$/;"	member	line:320	class:caffe::Net
+learnable_params_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<Blob<Dtype>*> learnable_params_;$/;"	member	line:321	class:caffe::Net
+learnable_param_ids_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<int> learnable_param_ids_;$/;"	member	line:329	class:caffe::Net
+params_lr_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<float> params_lr_;$/;"	member	line:331	class:caffe::Net
+has_params_lr_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<bool> has_params_lr_;$/;"	member	line:332	class:caffe::Net
+params_weight_decay_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<float> params_weight_decay_;$/;"	member	line:334	class:caffe::Net
+has_params_decay_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<bool> has_params_decay_;$/;"	member	line:335	class:caffe::Net
+memory_used_	/home/ryan/caffe/include/caffe/net.hpp	/^  size_t memory_used_;$/;"	member	line:337	class:caffe::Net
+debug_info_	/home/ryan/caffe/include/caffe/net.hpp	/^  bool debug_info_;$/;"	member	line:339	class:caffe::Net
+before_forward_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<Callback*> before_forward_;$/;"	member	line:341	class:caffe::Net
+after_forward_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<Callback*> after_forward_;$/;"	member	line:342	class:caffe::Net
+before_backward_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<Callback*> before_backward_;$/;"	member	line:343	class:caffe::Net
+after_backward_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<Callback*> after_backward_;$/;"	member	line:344	class:caffe::Net
