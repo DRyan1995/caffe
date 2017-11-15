@@ -53,6 +53,13 @@ class Net {
    */
   Dtype ForwardFromTo(int start, int end);
   Dtype ForwardFrom(int start);
+
+  //Ryan Hacking Here:
+  //void *ForwardFromTo_func(void *threadarg);
+  void ForwardFromTo_func(int, int, int);
+  Dtype Threaded_ForwardFromTo(int start, int end);
+
+  // ****************
   Dtype ForwardTo(int end);
   /// @brief DEPRECATED; set input blobs then use Forward() instead.
   const vector<Blob<Dtype>*>& Forward(const vector<Blob<Dtype>* > & bottom,
@@ -252,7 +259,7 @@ class Net {
     after_backward_.push_back(value);
   }
 
- protected:
+ // protected:
   // Helpers for Init.
   /// @brief Append a new top blob to the net.
   void AppendTop(const NetParameter& param, const int layer_id,

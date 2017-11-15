@@ -4,7 +4,7 @@
 #include <string>
 #include <utility>
 #include <vector>
-
+#include <thread>
 #include "hdf5.h"
 
 #include "caffe/common.hpp"
@@ -16,6 +16,12 @@
 #include "caffe/util/insert_splits.hpp"
 #include "caffe/util/math_functions.hpp"
 #include "caffe/util/upgrade_proto.hpp"
+
+//pthread
+
+
+
+volatile int RUN_LOCK = 0; // make sure these worker threads run one by one
 
 namespace caffe {
 
@@ -530,6 +536,64 @@ Dtype Net<Dtype>::ForwardFromTo(int start, int end) {
   }
   return loss;
 }
+
+// Ryan is hacking here!
+
+float loss = 0;
+#define NUM_OF_THREADS 2
+
+template <typename Dtype>
+void (Net<Dtype>:: ForwardFromTo_func)(int tid, int start, int end) {
+    cpu_set_t my_set;        /* Define your cpu_set bit mask. */
+    CPU_ZERO(&my_set);       /* Initialize it all to 0, i.e. no CPUs selected. */
+    CPU_SET(tid, &my_set);     /* set the bit that represents core 7. */
+    sched_setaffinity(0, sizeof(cpu_set_t), &my_set);
+
+  //for debugging****************************
+  using namespace std;
+  // cout << "Thread " << tid << " initing" << endl;
+  // cout << "Start: " << start << "End: " << end << endl;
+  //***************************************
+  while (tid != RUN_LOCK) usleep(100);
+  // cout << "Thread " << tid << " running" << endl;
+  for (int i = start; i <= end; ++i) {
+    for (int c = 0; c < before_forward_.size(); ++c) {
+      before_forward_[c]->run(i);
+    }
+    Dtype layer_loss = layers_[i]->Forward(bottom_vecs_[i], top_vecs_[i]);
+    loss += layer_loss;
+    // if (debug_info_) { ForwardDebugInfo(i); }
+    for (int c = 0; c < after_forward_.size(); ++c) {
+      after_forward_[c]->run(i);
+    }
+  }
+  // cout << "Thread " << tid << " exiting" << endl;
+  RUN_LOCK++;
+}
+
+template <typename Dtype>
+Dtype (Net<Dtype>::Threaded_ForwardFromTo)(int start, int end) {
+  using namespace std;
+  std::vector<std::thread> threads;
+
+  CHECK_GE(start, 0);
+  CHECK_LT(end, layers_.size());
+  loss = 0;
+  RUN_LOCK = 0;
+  for(int t = 0; t < NUM_OF_THREADS; t++){
+    int _start = start + (end - start + 1) / NUM_OF_THREADS * t;
+    int _end = start + (end - start + 1) / NUM_OF_THREADS * (t+1) - 1;
+    // cout << "Creating Forward Thread: " << t << endl;
+    threads.push_back(thread(&Net<Dtype>::ForwardFromTo_func, this, t, _start, _end));
+  }
+  for(int t=0; t < threads.size(); t++) {
+      threads[t].join();
+    //   printf("Threaded Froward: completed join with thread %d\n",t);
+  }
+
+  return loss;
+}
+//end hacking
 
 template <typename Dtype>
 Dtype Net<Dtype>::ForwardFrom(int start) {

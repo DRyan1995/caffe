@@ -412,6 +412,9 @@ BOOST_PYTHON_MODULE(_caffe) {
     // Legacy constructor
     .def("__init__", bp::make_constructor(&Net_Init_Load))
     .def("_forward", &Net<Dtype>::ForwardFromTo)
+    //Ryan hacking here *****************************
+    .def("_threaded_forward", &Net<Dtype>::Threaded_ForwardFromTo)
+    //***********************************************8
     .def("_backward", &Net<Dtype>::BackwardFromTo)
     .def("reshape", &Net<Dtype>::Reshape)
     .def("clear_param_diffs", &Net<Dtype>::ClearParamDiffs)
