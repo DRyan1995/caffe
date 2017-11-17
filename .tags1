@@ -4,85 +4,59 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-CAFFE_NET_HPP_	/home/ryan/caffe/include/caffe/net.hpp	/^#define CAFFE_NET_HPP_$/;"	macro	line:2
-caffe	/home/ryan/caffe/include/caffe/net.hpp	/^namespace caffe {$/;"	namespace	line:15
-Net	/home/ryan/caffe/include/caffe/net.hpp	/^class Net {$/;"	class	line:24	namespace:caffe
-~Net	/home/ryan/caffe/include/caffe/net.hpp	/^  virtual ~Net() {}$/;"	function	line:29	class:caffe::Net	signature:()
-ForwardPrefilled	/home/ryan/caffe/include/caffe/net.hpp	/^  const vector<Blob<Dtype>*>& ForwardPrefilled(Dtype* loss = NULL) {$/;"	function	line:40	class:caffe::Net	signature:(Dtype* loss = NULL)
-ForwardBackward	/home/ryan/caffe/include/caffe/net.hpp	/^  Dtype ForwardBackward() {$/;"	function	line:92	class:caffe::Net	signature:()
-name	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const string& name() const { return name_; }$/;"	function	line:130	class:caffe::Net	signature:() const
-layer_names	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<string>& layer_names() const { return layer_names_; }$/;"	function	line:132	class:caffe::Net	signature:() const
-blob_names	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<string>& blob_names() const { return blob_names_; }$/;"	function	line:134	class:caffe::Net	signature:() const
-blobs	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<shared_ptr<Blob<Dtype> > >& blobs() const {$/;"	function	line:136	class:caffe::Net	signature:() const
-layers	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<shared_ptr<Layer<Dtype> > >& layers() const {$/;"	function	line:140	class:caffe::Net	signature:() const
-phase	/home/ryan/caffe/include/caffe/net.hpp	/^  inline Phase phase() const { return phase_; }$/;"	function	line:144	class:caffe::Net	signature:() const
-bottom_vecs	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<vector<Blob<Dtype>*> >& bottom_vecs() const {$/;"	function	line:149	class:caffe::Net	signature:() const
-top_vecs	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<vector<Blob<Dtype>*> >& top_vecs() const {$/;"	function	line:156	class:caffe::Net	signature:() const
-top_ids	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<int> & top_ids(int i) const {$/;"	function	line:160	class:caffe::Net	signature:(int i) const
-bottom_ids	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<int> & bottom_ids(int i) const {$/;"	function	line:166	class:caffe::Net	signature:(int i) const
-bottom_need_backward	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<vector<bool> >& bottom_need_backward() const {$/;"	function	line:171	class:caffe::Net	signature:() const
-blob_loss_weights	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<Dtype>& blob_loss_weights() const {$/;"	function	line:174	class:caffe::Net	signature:() const
-layer_need_backward	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<bool>& layer_need_backward() const {$/;"	function	line:177	class:caffe::Net	signature:() const
-params	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<shared_ptr<Blob<Dtype> > >& params() const {$/;"	function	line:181	class:caffe::Net	signature:() const
-learnable_params	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<Blob<Dtype>*>& learnable_params() const {$/;"	function	line:184	class:caffe::Net	signature:() const
-params_lr	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<float>& params_lr() const { return params_lr_; }$/;"	function	line:188	class:caffe::Net	signature:() const
-has_params_lr	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<bool>& has_params_lr() const { return has_params_lr_; }$/;"	function	line:189	class:caffe::Net	signature:() const
-params_weight_decay	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<float>& params_weight_decay() const {$/;"	function	line:191	class:caffe::Net	signature:() const
-has_params_decay	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<bool>& has_params_decay() const {$/;"	function	line:194	class:caffe::Net	signature:() const
-param_names_index	/home/ryan/caffe/include/caffe/net.hpp	/^  const map<string, int>& param_names_index() const {$/;"	function	line:197	class:caffe::Net	signature:() const
-param_owners	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<int>& param_owners() const { return param_owners_; }$/;"	function	line:200	class:caffe::Net	signature:() const
-param_display_names	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<string>& param_display_names() const {$/;"	function	line:201	class:caffe::Net	signature:() const
-num_inputs	/home/ryan/caffe/include/caffe/net.hpp	/^  inline int num_inputs() const { return net_input_blobs_.size(); }$/;"	function	line:205	class:caffe::Net	signature:() const
-num_outputs	/home/ryan/caffe/include/caffe/net.hpp	/^  inline int num_outputs() const { return net_output_blobs_.size(); }$/;"	function	line:206	class:caffe::Net	signature:() const
-input_blobs	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<Blob<Dtype>*>& input_blobs() const {$/;"	function	line:207	class:caffe::Net	signature:() const
-output_blobs	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<Blob<Dtype>*>& output_blobs() const {$/;"	function	line:210	class:caffe::Net	signature:() const
-input_blob_indices	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<int>& input_blob_indices() const {$/;"	function	line:213	class:caffe::Net	signature:() const
-output_blob_indices	/home/ryan/caffe/include/caffe/net.hpp	/^  inline const vector<int>& output_blob_indices() const {$/;"	function	line:216	class:caffe::Net	signature:() const
-set_debug_info	/home/ryan/caffe/include/caffe/net.hpp	/^  void set_debug_info(const bool value) { debug_info_ = value; }$/;"	function	line:224	class:caffe::Net	signature:(const bool value)
-Callback	/home/ryan/caffe/include/caffe/net.hpp	/^  class Callback {$/;"	class	line:238	class:caffe::Net
-before_forward	/home/ryan/caffe/include/caffe/net.hpp	/^  const vector<Callback*>& before_forward() const { return before_forward_; }$/;"	function	line:245	class:caffe::Net	signature:() const
-add_before_forward	/home/ryan/caffe/include/caffe/net.hpp	/^  void add_before_forward(Callback* value) {$/;"	function	line:246	class:caffe::Net	signature:(Callback* value)
-after_forward	/home/ryan/caffe/include/caffe/net.hpp	/^  const vector<Callback*>& after_forward() const { return after_forward_; }$/;"	function	line:249	class:caffe::Net	signature:() const
-add_after_forward	/home/ryan/caffe/include/caffe/net.hpp	/^  void add_after_forward(Callback* value) {$/;"	function	line:250	class:caffe::Net	signature:(Callback* value)
-before_backward	/home/ryan/caffe/include/caffe/net.hpp	/^  const vector<Callback*>& before_backward() const { return before_backward_; }$/;"	function	line:253	class:caffe::Net	signature:() const
-add_before_backward	/home/ryan/caffe/include/caffe/net.hpp	/^  void add_before_backward(Callback* value) {$/;"	function	line:254	class:caffe::Net	signature:(Callback* value)
-after_backward	/home/ryan/caffe/include/caffe/net.hpp	/^  const vector<Callback*>& after_backward() const { return after_backward_; }$/;"	function	line:257	class:caffe::Net	signature:() const
-add_after_backward	/home/ryan/caffe/include/caffe/net.hpp	/^  void add_after_backward(Callback* value) {$/;"	function	line:258	class:caffe::Net	signature:(Callback* value)
-name_	/home/ryan/caffe/include/caffe/net.hpp	/^  string name_;$/;"	member	line:284	class:caffe::Net
-phase_	/home/ryan/caffe/include/caffe/net.hpp	/^  Phase phase_;$/;"	member	line:286	class:caffe::Net
-layers_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<shared_ptr<Layer<Dtype> > > layers_;$/;"	member	line:288	class:caffe::Net
-layer_names_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<string> layer_names_;$/;"	member	line:289	class:caffe::Net
-layer_names_index_	/home/ryan/caffe/include/caffe/net.hpp	/^  map<string, int> layer_names_index_;$/;"	member	line:290	class:caffe::Net
-layer_need_backward_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<bool> layer_need_backward_;$/;"	member	line:291	class:caffe::Net
-blobs_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<shared_ptr<Blob<Dtype> > > blobs_;$/;"	member	line:293	class:caffe::Net
-blob_names_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<string> blob_names_;$/;"	member	line:294	class:caffe::Net
-blob_names_index_	/home/ryan/caffe/include/caffe/net.hpp	/^  map<string, int> blob_names_index_;$/;"	member	line:295	class:caffe::Net
-blob_need_backward_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<bool> blob_need_backward_;$/;"	member	line:296	class:caffe::Net
-bottom_vecs_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<vector<Blob<Dtype>*> > bottom_vecs_;$/;"	member	line:300	class:caffe::Net
-bottom_id_vecs_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<vector<int> > bottom_id_vecs_;$/;"	member	line:301	class:caffe::Net
-bottom_need_backward_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<vector<bool> > bottom_need_backward_;$/;"	member	line:302	class:caffe::Net
-top_vecs_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<vector<Blob<Dtype>*> > top_vecs_;$/;"	member	line:304	class:caffe::Net
-top_id_vecs_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<vector<int> > top_id_vecs_;$/;"	member	line:305	class:caffe::Net
-blob_loss_weights_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<Dtype> blob_loss_weights_;$/;"	member	line:308	class:caffe::Net
-param_id_vecs_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<vector<int> > param_id_vecs_;$/;"	member	line:309	class:caffe::Net
-param_owners_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<int> param_owners_;$/;"	member	line:310	class:caffe::Net
-param_display_names_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<string> param_display_names_;$/;"	member	line:311	class:caffe::Net
-param_layer_indices_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<pair<int, int> > param_layer_indices_;$/;"	member	line:312	class:caffe::Net
-param_names_index_	/home/ryan/caffe/include/caffe/net.hpp	/^  map<string, int> param_names_index_;$/;"	member	line:313	class:caffe::Net
-net_input_blob_indices_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<int> net_input_blob_indices_;$/;"	member	line:315	class:caffe::Net
-net_output_blob_indices_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<int> net_output_blob_indices_;$/;"	member	line:316	class:caffe::Net
-net_input_blobs_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<Blob<Dtype>*> net_input_blobs_;$/;"	member	line:317	class:caffe::Net
-net_output_blobs_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<Blob<Dtype>*> net_output_blobs_;$/;"	member	line:318	class:caffe::Net
-params_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<shared_ptr<Blob<Dtype> > > params_;$/;"	member	line:320	class:caffe::Net
-learnable_params_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<Blob<Dtype>*> learnable_params_;$/;"	member	line:321	class:caffe::Net
-learnable_param_ids_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<int> learnable_param_ids_;$/;"	member	line:329	class:caffe::Net
-params_lr_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<float> params_lr_;$/;"	member	line:331	class:caffe::Net
-has_params_lr_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<bool> has_params_lr_;$/;"	member	line:332	class:caffe::Net
-params_weight_decay_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<float> params_weight_decay_;$/;"	member	line:334	class:caffe::Net
-has_params_decay_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<bool> has_params_decay_;$/;"	member	line:335	class:caffe::Net
-memory_used_	/home/ryan/caffe/include/caffe/net.hpp	/^  size_t memory_used_;$/;"	member	line:337	class:caffe::Net
-debug_info_	/home/ryan/caffe/include/caffe/net.hpp	/^  bool debug_info_;$/;"	member	line:339	class:caffe::Net
-before_forward_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<Callback*> before_forward_;$/;"	member	line:341	class:caffe::Net
-after_forward_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<Callback*> after_forward_;$/;"	member	line:342	class:caffe::Net
-before_backward_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<Callback*> before_backward_;$/;"	member	line:343	class:caffe::Net
-after_backward_	/home/ryan/caffe/include/caffe/net.hpp	/^  vector<Callback*> after_backward_;$/;"	member	line:344	class:caffe::Net
+NPY_NO_DEPRECATED_API	/home/ryan/caffe/python/caffe/_caffe.cpp	/^#define NPY_NO_DEPRECATED_API /;"	macro	line:4	file:
+NPY_ARRAY_C_CONTIGUOUS	/home/ryan/caffe/python/caffe/_caffe.cpp	/^#define NPY_ARRAY_C_CONTIGUOUS /;"	macro	line:25	file:
+PyArray_SetBaseObject	/home/ryan/caffe/python/caffe/_caffe.cpp	/^#define PyArray_SetBaseObject(/;"	macro	line:26	file:
+BP_REGISTER_SHARED_PTR_TO_PYTHON	/home/ryan/caffe/python/caffe/_caffe.cpp	/^#define BP_REGISTER_SHARED_PTR_TO_PYTHON(/;"	macro	line:30	file:
+caffe	/home/ryan/caffe/python/caffe/_caffe.cpp	/^namespace caffe {$/;"	namespace	line:44	file:
+Dtype	/home/ryan/caffe/python/caffe/_caffe.cpp	/^typedef float Dtype;$/;"	typedef	line:47	namespace:caffe	file:
+NPY_DTYPE	/home/ryan/caffe/python/caffe/_caffe.cpp	/^const int NPY_DTYPE = NPY_FLOAT32;$/;"	member	line:48	namespace:caffe	file:
+set_mode_cpu	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void set_mode_cpu() { Caffe::set_mode(Caffe::CPU); }$/;"	function	line:51	namespace:caffe	signature:()
+set_mode_gpu	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void set_mode_gpu() { Caffe::set_mode(Caffe::GPU); }$/;"	function	line:52	namespace:caffe	signature:()
+InitLog	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void InitLog() {$/;"	function	line:54	namespace:caffe	signature:()
+InitLogLevel	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void InitLogLevel(int level) {$/;"	function	line:58	namespace:caffe	signature:(int level)
+InitLogLevelPipe	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void InitLogLevelPipe(int level, bool stderr) {$/;"	function	line:62	namespace:caffe	signature:(int level, bool stderr)
+Log	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Log(const string& s) {$/;"	function	line:67	namespace:caffe	signature:(const string& s)
+set_random_seed	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void set_random_seed(unsigned int seed) { Caffe::set_random_seed(seed); }$/;"	function	line:71	namespace:caffe	signature:(unsigned int seed)
+CheckFile	/home/ryan/caffe/python/caffe/_caffe.cpp	/^static void CheckFile(const string& filename) {$/;"	function	line:77	namespace:caffe	signature:(const string& filename)
+CheckContiguousArray	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void CheckContiguousArray(PyArrayObject* arr, string name,$/;"	function	line:86	namespace:caffe	signature:(PyArrayObject* arr, string name, int channels, int height, int width)
+Net_Init	/home/ryan/caffe/python/caffe/_caffe.cpp	/^shared_ptr<Net<Dtype> > Net_Init(string network_file, int phase,$/;"	function	line:109	namespace:caffe	signature:(string network_file, int phase, const int level, const bp::object& stages, const bp::object& weights)
+Net_Init_Load	/home/ryan/caffe/python/caffe/_caffe.cpp	/^shared_ptr<Net<Dtype> > Net_Init_Load($/;"	function	line:137	namespace:caffe	signature:( string param_file, string pretrained_param_file, int phase)
+Net_Save	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Net_Save(const Net<Dtype>& net, string filename) {$/;"	function	line:153	namespace:caffe	signature:(const Net<Dtype>& net, string filename)
+Net_SaveHDF5	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Net_SaveHDF5(const Net<Dtype>& net, string filename) {$/;"	function	line:159	namespace:caffe	signature:(const Net<Dtype>& net, string filename)
+Net_LoadHDF5	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Net_LoadHDF5(Net<Dtype>* net, string filename) {$/;"	function	line:163	namespace:caffe	signature:(Net<Dtype>* net, string filename)
+Net_SetInputArrays	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Net_SetInputArrays(Net<Dtype>* net, bp::object data_obj,$/;"	function	line:167	namespace:caffe	signature:(Net<Dtype>* net, bp::object data_obj, bp::object labels_obj)
+GetSolverFromFile	/home/ryan/caffe/python/caffe/_caffe.cpp	/^Solver<Dtype>* GetSolverFromFile(const string& filename) {$/;"	function	line:199	namespace:caffe	signature:(const string& filename)
+NdarrayConverterGenerator	/home/ryan/caffe/python/caffe/_caffe.cpp	/^struct NdarrayConverterGenerator {$/;"	struct	line:205	namespace:caffe	file:
+apply	/home/ryan/caffe/python/caffe/_caffe.cpp	/^struct NdarrayConverterGenerator::apply<Dtype*> {$/;"	struct	line:210	class:caffe::NdarrayConverterGenerator	file:
+type	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  struct type {$/;"	struct	line:211	struct:caffe::NdarrayConverterGenerator::apply	file:
+operator ()	/home/ryan/caffe/python/caffe/_caffe.cpp	/^    PyObject* operator() (Dtype* data) const {$/;"	function	line:212	struct:caffe::NdarrayConverterGenerator::apply::type	signature:(Dtype* data) const
+get_pytype	/home/ryan/caffe/python/caffe/_caffe.cpp	/^    const PyTypeObject* get_pytype() {$/;"	function	line:216	struct:caffe::NdarrayConverterGenerator::apply::type	signature:()
+NdarrayCallPolicies	/home/ryan/caffe/python/caffe/_caffe.cpp	/^struct NdarrayCallPolicies : public bp::default_call_policies {$/;"	struct	line:222	namespace:caffe	file:
+result_converter	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  typedef NdarrayConverterGenerator result_converter;$/;"	typedef	line:223	struct:caffe::NdarrayCallPolicies	file:
+postcall	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  PyObject* postcall(PyObject* pyargs, PyObject* result) {$/;"	function	line:224	struct:caffe::NdarrayCallPolicies	signature:(PyObject* pyargs, PyObject* result)
+Blob_Reshape	/home/ryan/caffe/python/caffe/_caffe.cpp	/^bp::object Blob_Reshape(bp::tuple args, bp::dict kwargs) {$/;"	function	line:244	namespace:caffe	signature:(bp::tuple args, bp::dict kwargs)
+BlobVec_add_blob	/home/ryan/caffe/python/caffe/_caffe.cpp	/^bp::object BlobVec_add_blob(bp::tuple args, bp::dict kwargs) {$/;"	function	line:258	namespace:caffe	signature:(bp::tuple args, bp::dict kwargs)
+SolverCallback	/home/ryan/caffe/python/caffe/_caffe.cpp	/^class SolverCallback: public Solver<Dtype>::Callback {$/;"	class	line:274	namespace:caffe	file:
+on_start_	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  bp::object on_start_, on_gradients_ready_;$/;"	member	line:276	class:caffe::SolverCallback	file:
+on_gradients_ready_	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  bp::object on_start_, on_gradients_ready_;$/;"	member	line:276	class:caffe::SolverCallback	file:
+SolverCallback	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  SolverCallback(bp::object on_start, bp::object on_gradients_ready)$/;"	function	line:279	class:caffe::SolverCallback	signature:(bp::object on_start, bp::object on_gradients_ready)
+on_gradients_ready	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  virtual void on_gradients_ready() {$/;"	function	line:281	class:caffe::SolverCallback	signature:()
+on_start	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  virtual void on_start() {$/;"	function	line:284	class:caffe::SolverCallback	signature:()
+Solver_add_callback	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Solver_add_callback(Solver<Dtype> * solver, bp::object on_start,$/;"	function	line:289	namespace:caffe	signature:(Solver<Dtype> * solver, bp::object on_start, bp::object on_gradients_ready)
+Solver_add_nccl	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Solver_add_nccl(Solver<Dtype>* solver$/;"	function	line:295	namespace:caffe	signature:(Solver<Dtype>* solver , NCCL<Dtype>* nccl )
+share_weights	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void share_weights(Solver<Dtype>* solver, Net<Dtype>* net) {$/;"	function	line:305	namespace:caffe	signature:(Solver<Dtype>* solver, Net<Dtype>* net)
+NetCallback	/home/ryan/caffe/python/caffe/_caffe.cpp	/^class NetCallback: public Net<Dtype>::Callback {$/;"	class	line:310	namespace:caffe	file:
+NetCallback	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  explicit NetCallback(bp::object run) : run_(run) {}$/;"	function	line:312	class:caffe::NetCallback	signature:(bp::object run)
+run	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  virtual void run(int layer) {$/;"	function	line:315	class:caffe::NetCallback	signature:(int layer)
+run_	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  bp::object run_;$/;"	member	line:318	class:caffe::NetCallback	file:
+Net_before_forward	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Net_before_forward(Net<Dtype>* net, bp::object run) {$/;"	function	line:320	namespace:caffe	signature:(Net<Dtype>* net, bp::object run)
+Net_after_forward	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Net_after_forward(Net<Dtype>* net, bp::object run) {$/;"	function	line:323	namespace:caffe	signature:(Net<Dtype>* net, bp::object run)
+Net_before_backward	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Net_before_backward(Net<Dtype>* net, bp::object run) {$/;"	function	line:326	namespace:caffe	signature:(Net<Dtype>* net, bp::object run)
+Net_after_backward	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Net_after_backward(Net<Dtype>* net, bp::object run) {$/;"	function	line:329	namespace:caffe	signature:(Net<Dtype>* net, bp::object run)
+Net_add_nccl	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Net_add_nccl(Net<Dtype>* net$/;"	function	line:333	namespace:caffe	signature:(Net<Dtype>* net , NCCL<Dtype>* nccl )
+NCCL	/home/ryan/caffe/python/caffe/_caffe.cpp	/^class NCCL {$/;"	class	line:344	namespace:caffe	file:
+NCCL	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  NCCL(shared_ptr<Solver<Dtype> > solver, const string& uid) {}$/;"	function	line:346	class:caffe::NCCL	signature:(shared_ptr<Solver<Dtype> > solver, const string& uid)
+HasNCCL	/home/ryan/caffe/python/caffe/_caffe.cpp	/^bool HasNCCL() {$/;"	function	line:350	namespace:caffe	signature:()
+NCCL_New_Uid	/home/ryan/caffe/python/caffe/_caffe.cpp	/^bp::object NCCL_New_Uid() {$/;"	function	line:359	namespace:caffe	signature:()
+BOOST_PYTHON_MODULE	/home/ryan/caffe/python/caffe/_caffe.cpp	/^BOOST_PYTHON_MODULE(_caffe) {$/;"	function	line:381	namespace:caffe	signature:(_caffe)

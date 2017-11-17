@@ -533,6 +533,13 @@ BOOST_PYTHON_MODULE(_caffe) {
     shared_ptr<AdamSolver<Dtype> >, boost::noncopyable>(
         "AdamSolver", bp::init<string>());
 
+  bp::class_<Worker>("Worker", bp::init<int>())
+    .def("Display", &Worker::Display)
+  ;
+  BP_REGISTER_SHARED_PTR_TO_PYTHON(Worker);
+
+
+
   bp::def("get_solver", &GetSolverFromFile,
       bp::return_value_policy<bp::manage_new_object>());
 
