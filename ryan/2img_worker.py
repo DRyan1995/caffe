@@ -40,6 +40,8 @@ def transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT):
 
     return img
 
+start = time.time()
+
 
 '''
 Reading mean image, caffe model and its weights
@@ -112,7 +114,6 @@ preds = []
 # totalTimeSingle = 0
 # totalTimeMulti = 0
 #Making predictions
-start = time.time()
 
 img = cv2.imread(img_path, cv2.IMREAD_COLOR)
 img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)
@@ -138,7 +139,6 @@ while w1.finished != 1:
 out = net.output()
 out1 = net1.output()
 
-end = time.time()
 
 pred_probas = out['prob']
 test_ids = test_ids + [img_path.split('/')[-1][:-4]]
@@ -154,6 +154,7 @@ print img_path1
 print pred_probas.argmax()
 print '-------\n\n\n'
 
+end = time.time()
 
 
 print "piplined version exec time: {}s" .format(end - t0)

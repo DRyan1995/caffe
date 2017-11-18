@@ -1748,15 +1748,17 @@ HingeLossLayerTest	src/caffe/test/test_hinge_loss_layer.cpp	/^  HingeLossLayerTe
 HingeLossLayerTest	src/caffe/test/test_hinge_loss_layer.cpp	/^class HingeLossLayerTest : public MultiDeviceTest<TypeParam> {$/;"	c	namespace:caffe	file:
 HookupHandler	src/caffe/util/signal_handler.cpp	/^  void HookupHandler() {$/;"	f	namespace:__anon1
 IGNORE_SHARDING_PROTOCOL	src/gtest/gtest-all.cpp	/^    IGNORE_SHARDING_PROTOCOL$/;"	e	enum:testing::internal::UnitTestImpl::ReactionToSharding	file:
+IMAGE_HEIGHT	ryan/2img_origin.py	/^IMAGE_HEIGHT = 227$/;"	v
+IMAGE_HEIGHT	ryan/2img_worker.py	/^IMAGE_HEIGHT = 227$/;"	v
 IMAGE_HEIGHT	ryan/inference.py	/^IMAGE_HEIGHT = 227$/;"	v
-IMAGE_HEIGHT	ryan/inference_worker.py	/^IMAGE_HEIGHT = 227$/;"	v
 IMAGE_HEIGHT	ryan/origin.py	/^IMAGE_HEIGHT = 227$/;"	v
-IMAGE_HEIGHT	ryan/worker_inference.py	/^IMAGE_HEIGHT = 227$/;"	v
+IMAGE_HEIGHT	ryan/pipelined_inference.py	/^IMAGE_HEIGHT = 227$/;"	v
 IMAGE_INDEX	include/caffe/layers/window_data_layer.hpp	/^  enum WindowField { IMAGE_INDEX, LABEL, OVERLAP, X1, Y1, X2, Y2, NUM };$/;"	e	enum:caffe::WindowDataLayer::WindowField
+IMAGE_WIDTH	ryan/2img_origin.py	/^IMAGE_WIDTH = 227$/;"	v
+IMAGE_WIDTH	ryan/2img_worker.py	/^IMAGE_WIDTH = 227$/;"	v
 IMAGE_WIDTH	ryan/inference.py	/^IMAGE_WIDTH = 227$/;"	v
-IMAGE_WIDTH	ryan/inference_worker.py	/^IMAGE_WIDTH = 227$/;"	v
 IMAGE_WIDTH	ryan/origin.py	/^IMAGE_WIDTH = 227$/;"	v
-IMAGE_WIDTH	ryan/worker_inference.py	/^IMAGE_WIDTH = 227$/;"	v
+IMAGE_WIDTH	ryan/pipelined_inference.py	/^IMAGE_WIDTH = 227$/;"	v
 INCLUDE_CAFFE_UTIL_SIGNAL_HANDLER_H_	include/caffe/util/signal_handler.h	2;"	d
 INPUT_DATA_SIZE	src/caffe/test/test_batch_norm_layer.cpp	16;"	d	file:
 INSTANTIATE_CLASS	include/caffe/common.hpp	41;"	d
@@ -2049,6 +2051,7 @@ LossLayer	include/caffe/layers/loss_layer.hpp	/^  explicit LossLayer(const Layer
 LossLayer	include/caffe/layers/loss_layer.hpp	/^class LossLayer : public Layer<Dtype> {$/;"	c	namespace:caffe
 MATLAB_CXXFLAGS	Makefile	/^MATLAB_CXXFLAGS := $(CXXFLAGS) -Wno-uninitialized$/;"	m
 MAT_SO_EXT	Makefile	/^	MAT_SO_EXT := $(shell $(MATLAB_DIR)\/bin\/mexext)$/;"	m
+MAXI	ryan/pipelined_inference.py	/^MAXI = 10$/;"	v
 MAX_THREAD_NUM	include/caffe/worker.hpp	14;"	d
 MDB_CHECK	include/caffe/util/db_lmdb.hpp	/^inline void MDB_CHECK(int mdb_status) {$/;"	f	namespace:caffe::db
 MEX_ARGS	matlab/+caffe/private/caffe_.cpp	20;"	d	file:
@@ -5547,10 +5550,11 @@ element_type	src/gtest/gtest.h	/^  typedef T element_type;$/;"	t	class:testing::
 embed_image_html	examples/web_demo/app.py	/^def embed_image_html(image):$/;"	f
 empty	src/gtest/gtest.h	/^  bool empty() const { return (c_str() != NULL) && (length() == 0); }$/;"	f	class:testing::internal::String
 end	include/caffe/worker.hpp	/^    int end[MAX_THREAD_NUM];$/;"	m	class:caffe::Workload
+end	ryan/2img_origin.py	/^end = time.time()$/;"	v
+end	ryan/2img_worker.py	/^end = time.time()$/;"	v
 end	ryan/inference.py	/^end = time.time()$/;"	v
-end	ryan/inference_worker.py	/^end = time.time()$/;"	v
 end	ryan/origin.py	/^end = time.time()$/;"	v
-end	ryan/worker_inference.py	/^end = time.time()$/;"	v
+end	ryan/pipelined_inference.py	/^end = time.time()$/;"	v
 end	src/gtest/gtest.h	/^  const_iterator end() const { return array_ + size_; }$/;"	f	class:testing::internal::NativeArray
 end	src/gtest/gtest.h	/^  iterator end() const { return iterator(impl_->End()); }$/;"	f	class:testing::internal::ParamGenerator
 end10_	src/gtest/gtest.h	/^    const typename ParamGenerator<T10>::iterator end10_;$/;"	m	class:testing::internal::CartesianProductGenerator10::Iterator
@@ -5988,22 +5992,26 @@ im2col_nd_cpu	src/caffe/util/im2col.cpp	/^void im2col_nd_cpu(const Dtype* data_i
 image_database_	include/caffe/layers/window_data_layer.hpp	/^  vector<std::pair<std::string, vector<int> > > image_database_;$/;"	m	class:caffe::WindowDataLayer
 image_database_cache_	include/caffe/layers/window_data_layer.hpp	/^  vector<std::pair<std::string, Datum > > image_database_cache_;$/;"	m	class:caffe::WindowDataLayer
 images_dirname	examples/finetune_flickr_style/assemble_data.py	/^    images_dirname = os.path.join(training_dirname, 'images')$/;"	v
+img	ryan/2img_origin.py	/^img = cv2.imread(img_path, cv2.IMREAD_COLOR)$/;"	v
+img	ryan/2img_origin.py	/^img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)$/;"	v
+img	ryan/2img_worker.py	/^img = cv2.imread(img_path, cv2.IMREAD_COLOR)$/;"	v
+img	ryan/2img_worker.py	/^img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)$/;"	v
 img	ryan/inference.py	/^    img = cv2.imread(img_path, cv2.IMREAD_COLOR)$/;"	v
 img	ryan/inference.py	/^    img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)$/;"	v
-img	ryan/inference_worker.py	/^img = cv2.imread(img_path, cv2.IMREAD_COLOR)$/;"	v
-img	ryan/inference_worker.py	/^img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)$/;"	v
 img	ryan/origin.py	/^    img = cv2.imread(img_path, cv2.IMREAD_COLOR)$/;"	v
 img	ryan/origin.py	/^    img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)$/;"	v
-img	ryan/worker_inference.py	/^img = cv2.imread(img_path, cv2.IMREAD_COLOR)$/;"	v
-img	ryan/worker_inference.py	/^img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)$/;"	v
-img1	ryan/inference_worker.py	/^img1 = cv2.imread(img_path1, cv2.IMREAD_COLOR)$/;"	v
-img1	ryan/inference_worker.py	/^img1 = transform_img(img1, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)$/;"	v
-img1	ryan/worker_inference.py	/^img1 = cv2.imread(img_path1, cv2.IMREAD_COLOR)$/;"	v
-img1	ryan/worker_inference.py	/^img1 = transform_img(img1, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)$/;"	v
-img_path	ryan/inference_worker.py	/^img_path = "\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/1.jpg"$/;"	v
-img_path	ryan/worker_inference.py	/^img_path = "\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/1.jpg"$/;"	v
-img_path1	ryan/inference_worker.py	/^img_path1 = "\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/5.jpg"$/;"	v
-img_path1	ryan/worker_inference.py	/^img_path1 = "\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/5.jpg"$/;"	v
+img	ryan/pipelined_inference.py	/^    img = cv2.imread(img_path, cv2.IMREAD_COLOR)$/;"	v
+img	ryan/pipelined_inference.py	/^    img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)$/;"	v
+img1	ryan/2img_origin.py	/^img1 = cv2.imread(img_path1, cv2.IMREAD_COLOR)$/;"	v
+img1	ryan/2img_origin.py	/^img1 = transform_img(img1, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)$/;"	v
+img1	ryan/2img_worker.py	/^img1 = cv2.imread(img_path1, cv2.IMREAD_COLOR)$/;"	v
+img1	ryan/2img_worker.py	/^img1 = transform_img(img1, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)$/;"	v
+img_path	ryan/2img_origin.py	/^img_path = "\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/1.jpg"$/;"	v
+img_path	ryan/2img_worker.py	/^img_path = "\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/1.jpg"$/;"	v
+img_path	ryan/inference.py	/^    img_path = "\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/{}.jpg".format(imgi)$/;"	v
+img_path	ryan/pipelined_inference.py	/^    img_path = "\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/{}.jpg".format(imgi)$/;"	v
+img_path1	ryan/2img_origin.py	/^img_path1 = "\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/5.jpg"$/;"	v
+img_path1	ryan/2img_worker.py	/^img_path1 = "\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/5.jpg"$/;"	v
 impl	src/gtest/gtest.h	/^  const internal::UnitTestImpl* impl() const { return impl_; }$/;"	f	class:testing::UnitTest
 impl	src/gtest/gtest.h	/^  internal::UnitTestImpl* impl() { return impl_; }$/;"	f	class:testing::UnitTest
 impl_	src/gtest/gtest.h	/^  internal::UnitTestImpl* impl_;$/;"	m	class:testing::UnitTest
@@ -6302,14 +6310,16 @@ mdb_value_	include/caffe/util/db_lmdb.hpp	/^  MDB_val mdb_key_, mdb_value_;$/;"	
 mean_	examples/cpp_classification/classification.cpp	/^  cv::Mat mean_;$/;"	m	class:Classifier	file:
 mean_	include/caffe/layers/batch_norm_layer.hpp	/^  Blob<Dtype> mean_, variance_, temp_, x_norm_;$/;"	m	class:caffe::BatchNormLayer
 mean_	include/caffe/layers/mvn_layer.hpp	/^  Blob<Dtype> mean_, variance_, temp_;$/;"	m	class:caffe::MVNLayer
+mean_array	ryan/2img_origin.py	/^mean_array = np.asarray(mean_blob.data, dtype=np.float32).reshape($/;"	v
+mean_array	ryan/2img_worker.py	/^mean_array = np.asarray(mean_blob.data, dtype=np.float32).reshape($/;"	v
 mean_array	ryan/inference.py	/^mean_array = np.asarray(mean_blob.data, dtype=np.float32).reshape($/;"	v
-mean_array	ryan/inference_worker.py	/^mean_array = np.asarray(mean_blob.data, dtype=np.float32).reshape($/;"	v
 mean_array	ryan/origin.py	/^mean_array = np.asarray(mean_blob.data, dtype=np.float32).reshape($/;"	v
-mean_array	ryan/worker_inference.py	/^mean_array = np.asarray(mean_blob.data, dtype=np.float32).reshape($/;"	v
+mean_array	ryan/pipelined_inference.py	/^mean_array = np.asarray(mean_blob.data, dtype=np.float32).reshape($/;"	v
+mean_blob	ryan/2img_origin.py	/^mean_blob = caffe_pb2.BlobProto()$/;"	v
+mean_blob	ryan/2img_worker.py	/^mean_blob = caffe_pb2.BlobProto()$/;"	v
 mean_blob	ryan/inference.py	/^mean_blob = caffe_pb2.BlobProto()$/;"	v
-mean_blob	ryan/inference_worker.py	/^mean_blob = caffe_pb2.BlobProto()$/;"	v
 mean_blob	ryan/origin.py	/^mean_blob = caffe_pb2.BlobProto()$/;"	v
-mean_blob	ryan/worker_inference.py	/^mean_blob = caffe_pb2.BlobProto()$/;"	v
+mean_blob	ryan/pipelined_inference.py	/^mean_blob = caffe_pb2.BlobProto()$/;"	v
 mean_bound	src/caffe/test/test_random_number_generator.cpp	/^  Dtype mean_bound(const Dtype std) {$/;"	f	class:caffe::RandomNumberGeneratorTest
 mean_bound	src/caffe/test/test_random_number_generator.cpp	/^  Dtype mean_bound(const Dtype std, const int sample_size) {$/;"	f	class:caffe::RandomNumberGeneratorTest
 mean_bound_multiplier_	src/caffe/test/test_random_number_generator.cpp	/^  Dtype mean_bound_multiplier_;$/;"	m	class:caffe::RandomNumberGeneratorTest	file:
@@ -6363,12 +6373,12 @@ nccl	include/caffe/util/nccl.hpp	/^namespace nccl {$/;"	n	namespace:caffe
 nccl_	src/caffe/test/test_gradient_based_solver.cpp	/^  shared_ptr<NCCL<Dtype> > nccl_;$/;"	m	class:caffe::GradientBasedSolverTest	file:
 nccls_	src/caffe/parallel.cpp	/^  vector<NCCL<Dtype>*>* nccls_;$/;"	m	class:caffe::Worker	file:
 net	include/caffe/solver.hpp	/^  inline shared_ptr<Net<Dtype> > net() { return net_; }$/;"	f	class:caffe::Solver
+net	ryan/2img_origin.py	/^net = caffe.Net('\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/caffe_models\/caffe_model_1\/caffenet_deploy_1.prototxt',$/;"	v
+net	ryan/2img_worker.py	/^net = caffe.Net('\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/caffe_models\/caffe_model_1\/caffenet_deploy_1.prototxt',$/;"	v
 net	ryan/inference.py	/^net = caffe.Net('\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/caffe_models\/caffe_model_1\/caffenet_deploy_1.prototxt',$/;"	v
-net	ryan/inference_worker.py	/^net = caffe.Net('\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/caffe_models\/caffe_model_1\/caffenet_deploy_1.prototxt',$/;"	v
 net	ryan/origin.py	/^net = caffe.Net('\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/caffe_models\/caffe_model_1\/caffenet_deploy_1.prototxt',$/;"	v
-net	ryan/worker_inference.py	/^net = caffe.Net('\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/caffe_models\/caffe_model_1\/caffenet_deploy_1.prototxt',$/;"	v
-net1	ryan/inference_worker.py	/^net1 = caffe.Net('\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/caffe_models\/caffe_model_1\/caffenet_deploy_1.prototxt',$/;"	v
-net1	ryan/worker_inference.py	/^net1 = caffe.Net('\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/caffe_models\/caffe_model_1\/caffenet_deploy_1.prototxt',$/;"	v
+net1	ryan/2img_origin.py	/^net1 = caffe.Net('\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/caffe_models\/caffe_model_1\/caffenet_deploy_1.prototxt',$/;"	v
+net1	ryan/2img_worker.py	/^net1 = caffe.Net('\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/caffe_models\/caffe_model_1\/caffenet_deploy_1.prototxt',$/;"	v
 net_	examples/cpp_classification/classification.cpp	/^  shared_ptr<Net<float> > net_;$/;"	m	class:Classifier	file:
 net_	include/caffe/solver.hpp	/^  shared_ptr<Net<Dtype> > net_;$/;"	m	class:caffe::Solver
 net_	src/caffe/test/test_net.cpp	/^  shared_ptr<Net<Dtype> > net_;$/;"	m	class:caffe::NetTest	file:
@@ -6382,6 +6392,7 @@ net_output_blob_indices_	include/caffe/net.hpp	/^  vector<int> net_output_blob_i
 net_output_blobs_	include/caffe/net.hpp	/^  vector<Blob<Dtype>*> net_output_blobs_;$/;"	m	class:caffe::Net
 net_reshape	matlab/+caffe/private/caffe_.cpp	/^static void net_reshape(MEX_ARGS) {$/;"	f	file:
 net_save	matlab/+caffe/private/caffe_.cpp	/^static void net_save(MEX_ARGS) {$/;"	f	file:
+nets	ryan/pipelined_inference.py	/^nets = []$/;"	v
 nets_	matlab/+caffe/private/caffe_.cpp	/^static vector<shared_ptr<Net<float> > > nets_;$/;"	v	file:
 new_uid	src/caffe/parallel.cpp	/^string NCCL<Dtype>::new_uid() {$/;"	f	class:caffe::NCCL
 next_	src/gtest/gtest.h	/^  mutable linked_ptr_internal const* next_;$/;"	m	class:testing::internal::linked_ptr_internal
@@ -6569,12 +6580,13 @@ original_working_dir	src/gtest/gtest-all.cpp	/^const char* UnitTest::original_wo
 original_working_dir_	src/gtest/gtest-all.cpp	/^  internal::FilePath original_working_dir_;$/;"	m	class:testing::internal::UnitTestImpl	file:
 os_stack_trace_getter	src/gtest/gtest-all.cpp	/^OsStackTraceGetterInterface* UnitTestImpl::os_stack_trace_getter() {$/;"	f	class:testing::internal::UnitTestImpl
 os_stack_trace_getter_	src/gtest/gtest-all.cpp	/^  OsStackTraceGetterInterface* os_stack_trace_getter_;$/;"	m	class:testing::internal::UnitTestImpl	file:
+out	ryan/2img_origin.py	/^out = net.forward()$/;"	v
+out	ryan/2img_worker.py	/^out = net.output()$/;"	v
 out	ryan/inference.py	/^    out = net.forward_threaded()$/;"	v
-out	ryan/inference_worker.py	/^out = net.output()$/;"	v
 out	ryan/origin.py	/^    out = net.forward_threaded()$/;"	v
-out	ryan/worker_inference.py	/^out = net.forward()$/;"	v
-out1	ryan/inference_worker.py	/^out1 = net1.output()$/;"	v
-out1	ryan/worker_inference.py	/^out1 = net1.forward()$/;"	v
+out	ryan/pipelined_inference.py	/^    out = nets[imgi-1].output()$/;"	v
+out1	ryan/2img_origin.py	/^out1 = net1.forward()$/;"	v
+out1	ryan/2img_worker.py	/^out1 = net1.output()$/;"	v
 out_max_val_	include/caffe/layers/argmax_layer.hpp	/^  bool out_max_val_;$/;"	m	class:caffe::ArgMaxLayer
 out_spatial_dim_	include/caffe/layers/base_conv_layer.hpp	/^  int out_spatial_dim_;$/;"	m	class:caffe::BaseConvolutionLayer
 outcome	src/gtest/gtest-all.cpp	/^  DeathTestOutcome outcome() const { return outcome_; }$/;"	f	class:testing::internal::DeathTestImpl
@@ -6691,21 +6703,20 @@ power_output_	include/caffe/layers/lrn_layer.hpp	/^  Blob<Dtype> power_output_;$
 power_top_vec_	include/caffe/layers/lrn_layer.hpp	/^  vector<Blob<Dtype>*> power_top_vec_;$/;"	m	class:caffe::LRNLayer
 pre_pad_	include/caffe/layers/cudnn_lcn_layer.hpp	/^  int size_, pre_pad_;$/;"	m	class:caffe::CuDNNLCNLayer
 pre_pad_	include/caffe/layers/lrn_layer.hpp	/^  int pre_pad_;$/;"	m	class:caffe::LRNLayer
+pred_probas	ryan/2img_origin.py	/^pred_probas = out1['prob']$/;"	v
+pred_probas	ryan/2img_origin.py	/^pred_probas = out['prob']$/;"	v
+pred_probas	ryan/2img_worker.py	/^pred_probas = out1['prob']$/;"	v
+pred_probas	ryan/2img_worker.py	/^pred_probas = out['prob']$/;"	v
 pred_probas	ryan/inference.py	/^    pred_probas = out['prob']$/;"	v
-pred_probas	ryan/inference_worker.py	/^pred_probas = out1['prob']$/;"	v
-pred_probas	ryan/inference_worker.py	/^pred_probas = out['prob']$/;"	v
 pred_probas	ryan/origin.py	/^    pred_probas = out['prob']$/;"	v
-pred_probas	ryan/worker_inference.py	/^pred_probas = out1['prob']$/;"	v
-pred_probas	ryan/worker_inference.py	/^pred_probas = out['prob']$/;"	v
+pred_probas	ryan/pipelined_inference.py	/^    pred_probas = out['prob']$/;"	v
 predict	python/caffe/classifier.py	/^    def predict(self, inputs, oversample=True):$/;"	m	class:Classifier
-preds	ryan/inference.py	/^    preds = preds + [pred_probas.argmax()]$/;"	v
-preds	ryan/inference.py	/^preds = []$/;"	v
-preds	ryan/inference_worker.py	/^preds = []$/;"	v
-preds	ryan/inference_worker.py	/^preds = preds + [pred_probas.argmax()]$/;"	v
+preds	ryan/2img_origin.py	/^preds = []$/;"	v
+preds	ryan/2img_origin.py	/^preds = preds + [pred_probas.argmax()]$/;"	v
+preds	ryan/2img_worker.py	/^preds = []$/;"	v
+preds	ryan/2img_worker.py	/^preds = preds + [pred_probas.argmax()]$/;"	v
 preds	ryan/origin.py	/^    preds = preds + [pred_probas.argmax()]$/;"	v
 preds	ryan/origin.py	/^preds = []$/;"	v
-preds	ryan/worker_inference.py	/^preds = []$/;"	v
-preds	ryan/worker_inference.py	/^preds = preds + [pred_probas.argmax()]$/;"	v
 prefetch_	include/caffe/layers/base_data_layer.hpp	/^  vector<shared_ptr<Batch<Dtype> > > prefetch_;$/;"	m	class:caffe::BasePrefetchingDataLayer
 prefetch_current_	include/caffe/layers/base_data_layer.hpp	/^  Batch<Dtype>* prefetch_current_;$/;"	m	class:caffe::BasePrefetchingDataLayer
 prefetch_free_	include/caffe/layers/base_data_layer.hpp	/^  BlockingQueue<Batch<Dtype>*> prefetch_free_;$/;"	m	class:caffe::BasePrefetchingDataLayer
@@ -6994,10 +7005,11 @@ ss_	src/gtest/gtest.h	/^  const internal::scoped_ptr< ::std::stringstream> ss_;$
 stable_prod_grad_	include/caffe/layers/eltwise_layer.hpp	/^  bool stable_prod_grad_;$/;"	m	class:caffe::EltwiseLayer
 stack_trace_depth_	src/gtest/gtest-all.cpp	/^  internal::Int32 stack_trace_depth_;$/;"	m	class:testing::internal::GTestFlagSaver	file:
 start	include/caffe/worker.hpp	/^    int start[MAX_THREAD_NUM];$/;"	m	class:caffe::Workload
+start	ryan/2img_origin.py	/^start = time.time()$/;"	v
+start	ryan/2img_worker.py	/^start = time.time()$/;"	v
 start	ryan/inference.py	/^start = time.time()$/;"	v
-start	ryan/inference_worker.py	/^start = time.time()$/;"	v
 start	ryan/origin.py	/^start = time.time()$/;"	v
-start	ryan/worker_inference.py	/^start = time.time()$/;"	v
+start	ryan/pipelined_inference.py	/^start = time.time()$/;"	v
 start_cpu_	include/caffe/util/benchmark.hpp	/^  boost::posix_time::ptime start_cpu_;$/;"	m	class:caffe::Timer
 start_from_terminal	examples/web_demo/app.py	/^def start_from_terminal(app):$/;"	f
 start_gpu_	include/caffe/util/benchmark.hpp	/^  cudaEvent_t start_gpu_;$/;"	m	class:caffe::Timer
@@ -7053,10 +7065,10 @@ swap_endian	examples/mnist/convert_mnist_data.cpp	/^uint32_t swap_endian(uint32_
 swap_endian	examples/siamese/convert_mnist_siamese_data.cpp	/^uint32_t swap_endian(uint32_t val) {$/;"	f
 sync	src/caffe/util/blocking_queue.cpp	/^class BlockingQueue<T>::sync {$/;"	c	class:caffe::BlockingQueue	file:
 sync_	include/caffe/util/blocking_queue.hpp	/^  shared_ptr<sync> sync_;$/;"	m	class:caffe::BlockingQueue
+t0	ryan/2img_origin.py	/^t0 = time.time()$/;"	v
+t0	ryan/2img_worker.py	/^t0 = time.time()$/;"	v
 t0	ryan/inference.py	/^    t0 = time.time()$/;"	v
-t0	ryan/inference_worker.py	/^t0 = time.time()$/;"	v
 t0	ryan/origin.py	/^    t0 = time.time()$/;"	v
-t0	ryan/worker_inference.py	/^t0 = time.time()$/;"	v
 tanh	src/caffe/layers/lstm_unit_layer.cpp	/^inline Dtype tanh(Dtype x) {$/;"	f	namespace:caffe
 tanh_naive	src/caffe/test/test_tanh_layer.cpp	/^double tanh_naive(double x) {$/;"	f	namespace:caffe
 targets	src/caffe/test/test_data/generate_sample_data.py	/^targets = np.random.randn(num_rows, 1)$/;"	v
@@ -7109,15 +7121,12 @@ test_forward	python/caffe/test/test_python_layer.py	/^    def test_forward(self)
 test_forward	python/caffe/test/test_python_layer_with_param_str.py	/^    def test_forward(self):$/;"	m	class:TestLayerWithParam
 test_forward_backward	python/caffe/test/test_net.py	/^    def test_forward_backward(self):$/;"	m	class:TestNet
 test_forward_start_end	python/caffe/test/test_net.py	/^    def test_forward_start_end(self):$/;"	m	class:TestNet
-test_ids	ryan/inference.py	/^    test_ids = test_ids + [img_path.split('\/')[-1][:-4]]$/;"	v
-test_ids	ryan/inference.py	/^test_ids = []$/;"	v
-test_ids	ryan/inference_worker.py	/^test_ids = []$/;"	v
-test_ids	ryan/inference_worker.py	/^test_ids = test_ids + [img_path.split('\/')[-1][:-4]]$/;"	v
+test_ids	ryan/2img_origin.py	/^test_ids = []$/;"	v
+test_ids	ryan/2img_origin.py	/^test_ids = test_ids + [img_path.split('\/')[-1][:-4]]$/;"	v
+test_ids	ryan/2img_worker.py	/^test_ids = []$/;"	v
+test_ids	ryan/2img_worker.py	/^test_ids = test_ids + [img_path.split('\/')[-1][:-4]]$/;"	v
 test_ids	ryan/origin.py	/^    test_ids = test_ids + [img_path.split('\/')[-1][:-4]]$/;"	v
 test_ids	ryan/origin.py	/^test_ids = []$/;"	v
-test_ids	ryan/worker_inference.py	/^test_ids = []$/;"	v
-test_ids	ryan/worker_inference.py	/^test_ids = test_ids + [img_path.split('\/')[-1][:-4]]$/;"	v
-test_img_paths	ryan/inference.py	/^test_img_paths = [img_path for img_path in glob.glob("\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/*.jpg")]$/;"	v
 test_img_paths	ryan/origin.py	/^test_img_paths = [img_path for img_path in glob.glob("\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/*.jpg")]$/;"	v
 test_indices_	src/gtest/gtest.h	/^  std::vector<int> test_indices_;$/;"	m	class:testing::TestCase
 test_info_list	src/gtest/gtest.h	/^  const std::vector<TestInfo*>& test_info_list() const {$/;"	f	class:testing::TestCase
@@ -7224,16 +7233,18 @@ train	tools/caffe.cpp	/^RegisterBrewFunction(train);$/;"	v
 train	tools/caffe.cpp	/^int train() {$/;"	f
 training_dirname	examples/finetune_flickr_style/assemble_data.py	/^        training_dirname = os.path.join(caffe_dirname, 'data\/flickr_style')$/;"	v
 training_dirname	examples/finetune_flickr_style/assemble_data.py	/^training_dirname = os.path.join(caffe_dirname, 'data\/flickr_style')$/;"	v
+transform_img	ryan/2img_origin.py	/^def transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT):$/;"	f
+transform_img	ryan/2img_worker.py	/^def transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT):$/;"	f
 transform_img	ryan/inference.py	/^def transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT):$/;"	f
-transform_img	ryan/inference_worker.py	/^def transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT):$/;"	f
 transform_img	ryan/origin.py	/^def transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT):$/;"	f
-transform_img	ryan/worker_inference.py	/^def transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT):$/;"	f
+transform_img	ryan/pipelined_inference.py	/^def transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT):$/;"	f
 transform_param_	include/caffe/layers/base_data_layer.hpp	/^  TransformationParameter transform_param_;$/;"	m	class:caffe::BaseDataLayer
 transformed_data_	include/caffe/layers/base_data_layer.hpp	/^  Blob<Dtype> transformed_data_;$/;"	m	class:caffe::BasePrefetchingDataLayer
+transformer	ryan/2img_origin.py	/^transformer = caffe.io.Transformer({'data': net.blobs['data'].data.shape})$/;"	v
+transformer	ryan/2img_worker.py	/^transformer = caffe.io.Transformer({'data': net.blobs['data'].data.shape})$/;"	v
 transformer	ryan/inference.py	/^transformer = caffe.io.Transformer({'data': net.blobs['data'].data.shape})$/;"	v
-transformer	ryan/inference_worker.py	/^transformer = caffe.io.Transformer({'data': net.blobs['data'].data.shape})$/;"	v
 transformer	ryan/origin.py	/^transformer = caffe.io.Transformer({'data': net.blobs['data'].data.shape})$/;"	v
-transformer	ryan/worker_inference.py	/^transformer = caffe.io.Transformer({'data': net.blobs['data'].data.shape})$/;"	v
+transformer	ryan/pipelined_inference.py	/^    transformer = caffe.io.Transformer({'data': nets[imgi-1].blobs['data'].data.shape})$/;"	v
 transpose_	include/caffe/layers/inner_product_layer.hpp	/^  bool transpose_;  \/\/\/< if true, assume transposed weights$/;"	m	class:caffe::InnerProductLayer
 true_type	src/gtest/gtest.h	/^typedef bool_constant<true> true_type;$/;"	t	namespace:std::tr1
 try_peek	src/caffe/util/blocking_queue.cpp	/^bool BlockingQueue<T>::try_peek(T* t) {$/;"	f	class:caffe::BlockingQueue
@@ -8801,9 +8812,9 @@ variance_	include/caffe/layers/mvn_layer.hpp	/^  Blob<Dtype> mean_, variance_, t
 version	matlab/+caffe/private/caffe_.cpp	/^static void version(MEX_ARGS) {$/;"	f	file:
 version	matlab/+caffe/version.m	/^function version_str = version()$/;"	f
 vsnprintf	src/gtest/gtest-all.cpp	1439;"	d	file:
-w	ryan/inference_worker.py	/^w = caffe.Workload(4)$/;"	v
+w	ryan/2img_worker.py	/^w = caffe.Workload(4)$/;"	v
 w	ryan/test.py	/^w = caffe.Workload(4)$/;"	v
-w1	ryan/inference_worker.py	/^w1 = caffe.Workload(4)$/;"	v
+w1	ryan/2img_worker.py	/^w1 = caffe.Workload(4)$/;"	v
 w2	ryan/test.py	/^w2 = caffe.Workload(4)$/;"	v
 weight_cpu_gemm	src/caffe/layers/base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::weight_cpu_gemm(const Dtype* input,$/;"	f	class:caffe::BaseConvolutionLayer
 weight_gpu_gemm	src/caffe/layers/base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::weight_gpu_gemm(const Dtype* input,$/;"	f	class:caffe::BaseConvolutionLayer
@@ -8818,7 +8829,8 @@ width_	include/caffe/layers/pooling_layer.hpp	/^  int height_, width_;$/;"	m	cla
 width_	src/caffe/test/test_gradient_based_solver.cpp	/^  int num_, channels_, height_, width_;$/;"	m	class:caffe::GradientBasedSolverTest	file:
 width_	src/caffe/test/test_hdf5_output_layer.cpp	/^  int width_;$/;"	m	class:caffe::HDF5OutputLayerTest	file:
 width_	src/caffe/test/test_memory_data_layer.cpp	/^  int width_;$/;"	m	class:caffe::MemoryDataLayerTest	file:
-worker	ryan/inference_worker.py	/^worker = caffe.Worker(4)$/;"	v
+worker	ryan/2img_worker.py	/^worker = caffe.Worker(4)$/;"	v
+worker	ryan/pipelined_inference.py	/^worker = caffe.Worker(4)$/;"	v
 worker	ryan/test.py	/^worker = caffe.Worker(4)$/;"	v
 worker_thread	src/caffe/worker.cpp	/^void Worker::worker_thread(int tid){$/;"	f	class:caffe::Worker
 workloads	include/caffe/worker.hpp	/^    Workload * workloads[MAX_THREAD_NUM];$/;"	m	class:caffe::Worker
@@ -8836,6 +8848,7 @@ write_fd_	src/gtest/gtest-all.cpp	/^  int write_fd_;$/;"	m	class:testing::intern
 write_fd_	src/gtest/gtest.h	/^  int write_fd_;$/;"	m	class:testing::internal::InternalRunDeathTestFlag
 write_handle_	src/gtest/gtest-all.cpp	/^  AutoHandle write_handle_;$/;"	m	class:testing::internal::WindowsDeathTest	file:
 write_mean	matlab/+caffe/private/caffe_.cpp	/^static void write_mean(MEX_ARGS) {$/;"	f	file:
+ws	ryan/pipelined_inference.py	/^ws = []$/;"	v
 x	ryan/test.cpp	/^    int x;    $/;"	m	class:myClass	file:
 x_input_blob_	include/caffe/layers/recurrent_layer.hpp	/^  Blob<Dtype>* x_input_blob_;$/;"	m	class:caffe::RecurrentLayer
 x_norm_	include/caffe/layers/batch_norm_layer.hpp	/^  Blob<Dtype> mean_, variance_, temp_, x_norm_;$/;"	m	class:caffe::BatchNormLayer

@@ -39,6 +39,7 @@ def transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT):
     img = cv2.resize(img, (img_width, img_height), interpolation = cv2.INTER_CUBIC)
 
     return img
+
 start = time.time()
 
 '''
@@ -51,46 +52,59 @@ with open('/media/ryan/HDD/deeplearning-cats-dogs-tutorial/input/mean.binaryprot
 mean_array = np.asarray(mean_blob.data, dtype=np.float32).reshape(
     (mean_blob.channels, mean_blob.height, mean_blob.width))
 
+nets = []
+ws = []
+worker = caffe.Worker(4)
+worker.create_threads()
 
-#Read model architecture and trained model's weights
-net = caffe.Net('/media/ryan/HDD/deeplearning-cats-dogs-tutorial/caffe_models/caffe_model_1/caffenet_deploy_1.prototxt',
+MAXI = 10
+for imgi in range(1,MAXI+1):
+    nets.append(caffe.Net('/media/ryan/HDD/deeplearning-cats-dogs-tutorial/caffe_models/caffe_model_1/caffenet_deploy_1.prototxt',
                 '/media/ryan/HDD/deeplearning-cats-dogs-tutorial/caffe_models/caffe_model_1/caffe_model_1_iter_10000.caffemodel',
-                caffe.TEST)
+                caffe.TEST))
+    ws.append(caffe.Workload(4))
+    ws[imgi-1].set_start(0,0)
+    ws[imgi-1].set_end(0,5)
+    ws[imgi-1].set_start(1,6)
+    ws[imgi-1].set_end(1,11)
+    ws[imgi-1].set_start(2,12)
+    ws[imgi-1].set_end(2,17)
+    ws[imgi-1].set_start(3,18)
+    ws[imgi-1].set_end(3,23)
+    ws[imgi-1].set_net(nets[imgi-1])
 
-#Define image transformers
-transformer = caffe.io.Transformer({'data': net.blobs['data'].data.shape})
-transformer.set_mean('data', mean_array)
-transformer.set_transpose('data', (2,0,1))
 
+    #Define image transformers
+    transformer = caffe.io.Transformer({'data': nets[imgi-1].blobs['data'].data.shape})
+    transformer.set_mean('data', mean_array)
+    transformer.set_transpose('data', (2,0,1))
 
-'''
-Making predicitions
-'''
-##Reading image paths
-
-# test_ids = []
-# preds = []
-
-# totalTimeSingle = 0
-# totalTimeMulti = 0
-#Making predictions
-
-for imgi in range(1,11):
     img_path = "/media/ryan/HDD/deeplearning-cats-dogs-tutorial/input/test2/{}.jpg".format(imgi)
+
+
+
+
     img = cv2.imread(img_path, cv2.IMREAD_COLOR)
     img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)
 
-    net.blobs['data'].data[...] = transformer.preprocess('data', img)
+    nets[imgi-1].blobs['data'].data[...] = transformer.preprocess('data', img)
 
-    t0 = time.time()
-    # out = net.forward()
-    out = net.forward_threaded()
+    worker.assign_workload(ws[imgi-1])
+
+
+while ws[MAXI-1].finished != 1:
+    time.sleep(.001)
+
+for imgi in range(1, MAXI+1):
+    img_path = "/media/ryan/HDD/deeplearning-cats-dogs-tutorial/input/test2/{}.jpg".format(imgi)
+    out = nets[imgi-1].output()
     pred_probas = out['prob']
     # test_ids = test_ids + [img_path.split('/')[-1][:-4]]
     # preds = preds + [pred_probas.argmax()]
     print img_path
     print pred_probas.argmax()
     print '-------\n\n\n'
+
 end = time.time()
 
 print "exec time: {}s" .format(end - start)

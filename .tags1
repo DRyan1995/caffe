@@ -4,33 +4,18 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-IMAGE_WIDTH	/home/ryan/caffe/ryan/inference_worker.py	/^IMAGE_WIDTH = 227$/;"	variable	line:24
-IMAGE_HEIGHT	/home/ryan/caffe/ryan/inference_worker.py	/^IMAGE_HEIGHT = 227$/;"	variable	line:25
-transform_img	/home/ryan/caffe/ryan/inference_worker.py	/^def transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT):$/;"	function	line:31
-mean_blob	/home/ryan/caffe/ryan/inference_worker.py	/^mean_blob = caffe_pb2.BlobProto()$/;"	variable	line:48
-mean_array	/home/ryan/caffe/ryan/inference_worker.py	/^mean_array = np.asarray(mean_blob.data, dtype=np.float32).reshape($/;"	variable	line:51
-net	/home/ryan/caffe/ryan/inference_worker.py	/^net = caffe.Net('\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/caffe_models\/caffe_model_1\/caffenet_deploy_1.prototxt',$/;"	variable	line:56
-net1	/home/ryan/caffe/ryan/inference_worker.py	/^net1 = caffe.Net('\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/caffe_models\/caffe_model_1\/caffenet_deploy_1.prototxt',$/;"	variable	line:60
-w	/home/ryan/caffe/ryan/inference_worker.py	/^w = caffe.Workload(4)$/;"	variable	line:66
-w1	/home/ryan/caffe/ryan/inference_worker.py	/^w1 = caffe.Workload(4)$/;"	variable	line:68
-worker	/home/ryan/caffe/ryan/inference_worker.py	/^worker = caffe.Worker(4)$/;"	variable	line:89
-transformer	/home/ryan/caffe/ryan/inference_worker.py	/^transformer = caffe.io.Transformer({'data': net.blobs['data'].data.shape})$/;"	variable	line:94
-img_path	/home/ryan/caffe/ryan/inference_worker.py	/^img_path = "\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/1.jpg"$/;"	variable	line:106
-img_path1	/home/ryan/caffe/ryan/inference_worker.py	/^img_path1 = "\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/5.jpg"$/;"	variable	line:107
-test_ids	/home/ryan/caffe/ryan/inference_worker.py	/^test_ids = []$/;"	variable	line:109
-preds	/home/ryan/caffe/ryan/inference_worker.py	/^preds = []$/;"	variable	line:110
-start	/home/ryan/caffe/ryan/inference_worker.py	/^start = time.time()$/;"	variable	line:115
-img	/home/ryan/caffe/ryan/inference_worker.py	/^img = cv2.imread(img_path, cv2.IMREAD_COLOR)$/;"	variable	line:117
-img	/home/ryan/caffe/ryan/inference_worker.py	/^img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)$/;"	variable	line:118
-img1	/home/ryan/caffe/ryan/inference_worker.py	/^img1 = cv2.imread(img_path1, cv2.IMREAD_COLOR)$/;"	variable	line:123
-img1	/home/ryan/caffe/ryan/inference_worker.py	/^img1 = transform_img(img1, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)$/;"	variable	line:124
-t0	/home/ryan/caffe/ryan/inference_worker.py	/^t0 = time.time()$/;"	variable	line:128
-out	/home/ryan/caffe/ryan/inference_worker.py	/^out = net.output()$/;"	variable	line:138
-out1	/home/ryan/caffe/ryan/inference_worker.py	/^out1 = net1.output()$/;"	variable	line:139
-end	/home/ryan/caffe/ryan/inference_worker.py	/^end = time.time()$/;"	variable	line:141
-pred_probas	/home/ryan/caffe/ryan/inference_worker.py	/^pred_probas = out['prob']$/;"	variable	line:143
-test_ids	/home/ryan/caffe/ryan/inference_worker.py	/^test_ids = test_ids + [img_path.split('\/')[-1][:-4]]$/;"	variable	line:144
-preds	/home/ryan/caffe/ryan/inference_worker.py	/^preds = preds + [pred_probas.argmax()]$/;"	variable	line:145
-pred_probas	/home/ryan/caffe/ryan/inference_worker.py	/^pred_probas = out1['prob']$/;"	variable	line:150
-test_ids	/home/ryan/caffe/ryan/inference_worker.py	/^test_ids = test_ids + [img_path.split('\/')[-1][:-4]]$/;"	variable	line:151
-preds	/home/ryan/caffe/ryan/inference_worker.py	/^preds = preds + [pred_probas.argmax()]$/;"	variable	line:152
+IMAGE_WIDTH	/home/ryan/caffe/ryan/inference.py	/^IMAGE_WIDTH = 227$/;"	variable	line:24
+IMAGE_HEIGHT	/home/ryan/caffe/ryan/inference.py	/^IMAGE_HEIGHT = 227$/;"	variable	line:25
+transform_img	/home/ryan/caffe/ryan/inference.py	/^def transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT):$/;"	function	line:31
+start	/home/ryan/caffe/ryan/inference.py	/^start = time.time()$/;"	variable	line:42
+mean_blob	/home/ryan/caffe/ryan/inference.py	/^mean_blob = caffe_pb2.BlobProto()$/;"	variable	line:48
+mean_array	/home/ryan/caffe/ryan/inference.py	/^mean_array = np.asarray(mean_blob.data, dtype=np.float32).reshape($/;"	variable	line:51
+net	/home/ryan/caffe/ryan/inference.py	/^net = caffe.Net('\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/caffe_models\/caffe_model_1\/caffenet_deploy_1.prototxt',$/;"	variable	line:56
+transformer	/home/ryan/caffe/ryan/inference.py	/^transformer = caffe.io.Transformer({'data': net.blobs['data'].data.shape})$/;"	variable	line:61
+img_path	/home/ryan/caffe/ryan/inference.py	/^    img_path = "\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/{}.jpg".format(imgi)$/;"	variable	line:79
+img	/home/ryan/caffe/ryan/inference.py	/^    img = cv2.imread(img_path, cv2.IMREAD_COLOR)$/;"	variable	line:80
+img	/home/ryan/caffe/ryan/inference.py	/^    img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)$/;"	variable	line:81
+t0	/home/ryan/caffe/ryan/inference.py	/^    t0 = time.time()$/;"	variable	line:85
+out	/home/ryan/caffe/ryan/inference.py	/^    out = net.forward_threaded()$/;"	variable	line:87
+pred_probas	/home/ryan/caffe/ryan/inference.py	/^    pred_probas = out['prob']$/;"	variable	line:88
+end	/home/ryan/caffe/ryan/inference.py	/^end = time.time()$/;"	variable	line:94

@@ -73,6 +73,7 @@ void Worker::worker_thread(int tid){
             this->workloads[tid]->finished = 1;
             this->workloads[tid] = NULL;
         }else{
+            while(this->workloads[tid+1] != NULL)usleep(1);
             this->workloads[tid+1] = this->workloads[tid];
             this->workloads[tid] = NULL;
         }
