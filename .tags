@@ -1749,8 +1749,14 @@ HingeLossLayerTest	src/caffe/test/test_hinge_loss_layer.cpp	/^class HingeLossLay
 HookupHandler	src/caffe/util/signal_handler.cpp	/^  void HookupHandler() {$/;"	f	namespace:__anon1
 IGNORE_SHARDING_PROTOCOL	src/gtest/gtest-all.cpp	/^    IGNORE_SHARDING_PROTOCOL$/;"	e	enum:testing::internal::UnitTestImpl::ReactionToSharding	file:
 IMAGE_HEIGHT	ryan/inference.py	/^IMAGE_HEIGHT = 227$/;"	v
+IMAGE_HEIGHT	ryan/inference_worker.py	/^IMAGE_HEIGHT = 227$/;"	v
+IMAGE_HEIGHT	ryan/origin.py	/^IMAGE_HEIGHT = 227$/;"	v
+IMAGE_HEIGHT	ryan/worker_inference.py	/^IMAGE_HEIGHT = 227$/;"	v
 IMAGE_INDEX	include/caffe/layers/window_data_layer.hpp	/^  enum WindowField { IMAGE_INDEX, LABEL, OVERLAP, X1, Y1, X2, Y2, NUM };$/;"	e	enum:caffe::WindowDataLayer::WindowField
 IMAGE_WIDTH	ryan/inference.py	/^IMAGE_WIDTH = 227$/;"	v
+IMAGE_WIDTH	ryan/inference_worker.py	/^IMAGE_WIDTH = 227$/;"	v
+IMAGE_WIDTH	ryan/origin.py	/^IMAGE_WIDTH = 227$/;"	v
+IMAGE_WIDTH	ryan/worker_inference.py	/^IMAGE_WIDTH = 227$/;"	v
 INCLUDE_CAFFE_UTIL_SIGNAL_HANDLER_H_	include/caffe/util/signal_handler.h	2;"	d
 INPUT_DATA_SIZE	src/caffe/test/test_batch_norm_layer.cpp	16;"	d	file:
 INSTANTIATE_CLASS	include/caffe/common.hpp	41;"	d
@@ -2043,7 +2049,7 @@ LossLayer	include/caffe/layers/loss_layer.hpp	/^  explicit LossLayer(const Layer
 LossLayer	include/caffe/layers/loss_layer.hpp	/^class LossLayer : public Layer<Dtype> {$/;"	c	namespace:caffe
 MATLAB_CXXFLAGS	Makefile	/^MATLAB_CXXFLAGS := $(CXXFLAGS) -Wno-uninitialized$/;"	m
 MAT_SO_EXT	Makefile	/^	MAT_SO_EXT := $(shell $(MATLAB_DIR)\/bin\/mexext)$/;"	m
-MAX_THREAD_NUM	include/caffe/worker.hpp	13;"	d
+MAX_THREAD_NUM	include/caffe/worker.hpp	14;"	d
 MDB_CHECK	include/caffe/util/db_lmdb.hpp	/^inline void MDB_CHECK(int mdb_status) {$/;"	f	namespace:caffe::db
 MEX_ARGS	matlab/+caffe/private/caffe_.cpp	20;"	d	file:
 MISSING_IMAGE_SHA1	examples/finetune_flickr_style/assemble_data.py	/^MISSING_IMAGE_SHA1 = '6a92790b1c2a301c6e7ddef645dca1f53ea97ac2'$/;"	v
@@ -4245,11 +4251,11 @@ WindowsDeathTest	src/gtest/gtest-all.cpp	/^class WindowsDeathTest : public Death
 WithParamInterface	src/gtest/gtest.h	/^class WithParamInterface {$/;"	c	namespace:testing
 WithinChannelBackward	src/caffe/layers/lrn_layer.cpp	/^void LRNLayer<Dtype>::WithinChannelBackward($/;"	f	class:caffe::LRNLayer
 WithinChannelForward	src/caffe/layers/lrn_layer.cpp	/^void LRNLayer<Dtype>::WithinChannelForward($/;"	f	class:caffe::LRNLayer
-Worker	include/caffe/worker.hpp	/^class Worker{$/;"	c	namespace:caffe
+Worker	include/caffe/worker.hpp	/^class Worker{ \/\/ worker works forever like server$/;"	c	namespace:caffe
 Worker	src/caffe/parallel.cpp	/^  explicit Worker(shared_ptr<Solver<Dtype> > rank0, int device,$/;"	f	class:caffe::Worker
 Worker	src/caffe/parallel.cpp	/^class Worker : public InternalThread {$/;"	c	namespace:caffe	file:
 Worker	src/caffe/worker.cpp	/^Worker::Worker(int x){$/;"	f	class:caffe::Worker
-Workload	include/caffe/worker.hpp	/^class Workload{$/;"	c	namespace:caffe
+Workload	include/caffe/worker.hpp	/^class Workload{ \/\/ each inference create a workload$/;"	c	namespace:caffe
 Workload	src/caffe/worker.cpp	/^Workload::Workload(int x){$/;"	f	class:caffe::Workload
 WrapInputLayer	examples/cpp_classification/classification.cpp	/^void Classifier::WrapInputLayer(std::vector<cv::Mat>* input_channels) {$/;"	f	class:Classifier
 Write	src/gtest/gtest.h	/^inline int Write(int fd, const void* buf, unsigned int count) {$/;"	f	namespace:std::tr1::posix
@@ -4311,6 +4317,8 @@ _NORMAL_TRIGGER	scripts/cpp_lint.py	/^  _NORMAL_TRIGGER = 250  # for --v=0, 500 
 _NO_ASM	scripts/cpp_lint.py	/^_NO_ASM = 0       # Outside of inline assembly block$/;"	v
 _NamespaceInfo	scripts/cpp_lint.py	/^class _NamespaceInfo(_BlockInfo):$/;"	c
 _NestingState	scripts/cpp_lint.py	/^class _NestingState(object):$/;"	c
+_Net_Index	python/caffe/pycaffe.py	/^def _Net_Index(self, blobs=None, start=None, end=None, **kwargs):$/;"	f
+_Net_Output	python/caffe/pycaffe.py	/^def _Net_Output(self, blobs=None, start=None, end=None, **kwargs):$/;"	f
 _Net_backward	python/caffe/pycaffe.py	/^def _Net_backward(self, diffs=None, start=None, end=None, **kwargs):$/;"	f
 _Net_batch	python/caffe/pycaffe.py	/^def _Net_batch(self, blobs):$/;"	f
 _Net_blob_loss_weights	python/caffe/pycaffe.py	/^def _Net_blob_loss_weights(self):$/;"	f
@@ -5540,6 +5548,9 @@ embed_image_html	examples/web_demo/app.py	/^def embed_image_html(image):$/;"	f
 empty	src/gtest/gtest.h	/^  bool empty() const { return (c_str() != NULL) && (length() == 0); }$/;"	f	class:testing::internal::String
 end	include/caffe/worker.hpp	/^    int end[MAX_THREAD_NUM];$/;"	m	class:caffe::Workload
 end	ryan/inference.py	/^end = time.time()$/;"	v
+end	ryan/inference_worker.py	/^end = time.time()$/;"	v
+end	ryan/origin.py	/^end = time.time()$/;"	v
+end	ryan/worker_inference.py	/^end = time.time()$/;"	v
 end	src/gtest/gtest.h	/^  const_iterator end() const { return array_ + size_; }$/;"	f	class:testing::internal::NativeArray
 end	src/gtest/gtest.h	/^  iterator end() const { return iterator(impl_->End()); }$/;"	f	class:testing::internal::ParamGenerator
 end10_	src/gtest/gtest.h	/^    const typename ParamGenerator<T10>::iterator end10_;$/;"	m	class:testing::internal::CartesianProductGenerator10::Iterator
@@ -5979,6 +5990,20 @@ image_database_cache_	include/caffe/layers/window_data_layer.hpp	/^  vector<std:
 images_dirname	examples/finetune_flickr_style/assemble_data.py	/^    images_dirname = os.path.join(training_dirname, 'images')$/;"	v
 img	ryan/inference.py	/^    img = cv2.imread(img_path, cv2.IMREAD_COLOR)$/;"	v
 img	ryan/inference.py	/^    img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)$/;"	v
+img	ryan/inference_worker.py	/^img = cv2.imread(img_path, cv2.IMREAD_COLOR)$/;"	v
+img	ryan/inference_worker.py	/^img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)$/;"	v
+img	ryan/origin.py	/^    img = cv2.imread(img_path, cv2.IMREAD_COLOR)$/;"	v
+img	ryan/origin.py	/^    img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)$/;"	v
+img	ryan/worker_inference.py	/^img = cv2.imread(img_path, cv2.IMREAD_COLOR)$/;"	v
+img	ryan/worker_inference.py	/^img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)$/;"	v
+img1	ryan/inference_worker.py	/^img1 = cv2.imread(img_path1, cv2.IMREAD_COLOR)$/;"	v
+img1	ryan/inference_worker.py	/^img1 = transform_img(img1, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)$/;"	v
+img1	ryan/worker_inference.py	/^img1 = cv2.imread(img_path1, cv2.IMREAD_COLOR)$/;"	v
+img1	ryan/worker_inference.py	/^img1 = transform_img(img1, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)$/;"	v
+img_path	ryan/inference_worker.py	/^img_path = "\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/1.jpg"$/;"	v
+img_path	ryan/worker_inference.py	/^img_path = "\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/1.jpg"$/;"	v
+img_path1	ryan/inference_worker.py	/^img_path1 = "\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/5.jpg"$/;"	v
+img_path1	ryan/worker_inference.py	/^img_path1 = "\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/5.jpg"$/;"	v
 impl	src/gtest/gtest.h	/^  const internal::UnitTestImpl* impl() const { return impl_; }$/;"	f	class:testing::UnitTest
 impl	src/gtest/gtest.h	/^  internal::UnitTestImpl* impl() { return impl_; }$/;"	f	class:testing::UnitTest
 impl_	src/gtest/gtest.h	/^  internal::UnitTestImpl* impl_;$/;"	m	class:testing::UnitTest
@@ -6216,6 +6241,7 @@ load_next_image	examples/pycaffe/layers/pascal_multilabel_datalayers.py	/^    de
 load_pascal_annotation	examples/pycaffe/layers/pascal_multilabel_datalayers.py	/^def load_pascal_annotation(index, pascal_root):$/;"	f
 lock	ryan/pthread.cpp	/^int lock = 0;$/;"	v
 loss	include/caffe/layer.hpp	/^  inline Dtype loss(const int top_index) const {$/;"	f	class:caffe::Layer
+loss	include/caffe/worker.hpp	/^    float loss;$/;"	m	class:caffe::Workload
 loss	src/caffe/net.cpp	/^float loss = 0;$/;"	m	namespace:caffe	file:
 loss_	include/caffe/layer.hpp	/^  vector<Dtype> loss_;$/;"	m	class:caffe::Layer
 losses_	include/caffe/solver.hpp	/^  vector<Dtype> losses_;$/;"	m	class:caffe::Solver
@@ -6277,7 +6303,13 @@ mean_	examples/cpp_classification/classification.cpp	/^  cv::Mat mean_;$/;"	m	cl
 mean_	include/caffe/layers/batch_norm_layer.hpp	/^  Blob<Dtype> mean_, variance_, temp_, x_norm_;$/;"	m	class:caffe::BatchNormLayer
 mean_	include/caffe/layers/mvn_layer.hpp	/^  Blob<Dtype> mean_, variance_, temp_;$/;"	m	class:caffe::MVNLayer
 mean_array	ryan/inference.py	/^mean_array = np.asarray(mean_blob.data, dtype=np.float32).reshape($/;"	v
+mean_array	ryan/inference_worker.py	/^mean_array = np.asarray(mean_blob.data, dtype=np.float32).reshape($/;"	v
+mean_array	ryan/origin.py	/^mean_array = np.asarray(mean_blob.data, dtype=np.float32).reshape($/;"	v
+mean_array	ryan/worker_inference.py	/^mean_array = np.asarray(mean_blob.data, dtype=np.float32).reshape($/;"	v
 mean_blob	ryan/inference.py	/^mean_blob = caffe_pb2.BlobProto()$/;"	v
+mean_blob	ryan/inference_worker.py	/^mean_blob = caffe_pb2.BlobProto()$/;"	v
+mean_blob	ryan/origin.py	/^mean_blob = caffe_pb2.BlobProto()$/;"	v
+mean_blob	ryan/worker_inference.py	/^mean_blob = caffe_pb2.BlobProto()$/;"	v
 mean_bound	src/caffe/test/test_random_number_generator.cpp	/^  Dtype mean_bound(const Dtype std) {$/;"	f	class:caffe::RandomNumberGeneratorTest
 mean_bound	src/caffe/test/test_random_number_generator.cpp	/^  Dtype mean_bound(const Dtype std, const int sample_size) {$/;"	f	class:caffe::RandomNumberGeneratorTest
 mean_bound_multiplier_	src/caffe/test/test_random_number_generator.cpp	/^  Dtype mean_bound_multiplier_;$/;"	m	class:caffe::RandomNumberGeneratorTest	file:
@@ -6317,6 +6349,7 @@ mxERROR	matlab/+caffe/private/caffe_.cpp	/^inline void mxERROR(const char* msg) 
 mx_mat_to_blob	matlab/+caffe/private/caffe_.cpp	/^static void mx_mat_to_blob(const mxArray* mx_mat, Blob<float>* blob,$/;"	f	file:
 myClass	ryan/test.cpp	/^class myClass$/;"	c	file:
 myClass	ryan/test.cpp	/^myClass::myClass(int t){$/;"	f	class:myClass
+myNet	include/caffe/worker.hpp	/^    Net<float> * myNet;$/;"	m	class:caffe::Workload
 n_	include/caffe/layers/memory_data_layer.hpp	/^  int n_;$/;"	m	class:caffe::MemoryDataLayer
 name	include/caffe/net.hpp	/^  inline const string& name() const { return name_; }$/;"	f	class:caffe::Net
 name	src/gtest/gtest.h	/^  const char* name() const { return name_.c_str(); }$/;"	f	class:testing::TestCase
@@ -6331,6 +6364,11 @@ nccl_	src/caffe/test/test_gradient_based_solver.cpp	/^  shared_ptr<NCCL<Dtype> >
 nccls_	src/caffe/parallel.cpp	/^  vector<NCCL<Dtype>*>* nccls_;$/;"	m	class:caffe::Worker	file:
 net	include/caffe/solver.hpp	/^  inline shared_ptr<Net<Dtype> > net() { return net_; }$/;"	f	class:caffe::Solver
 net	ryan/inference.py	/^net = caffe.Net('\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/caffe_models\/caffe_model_1\/caffenet_deploy_1.prototxt',$/;"	v
+net	ryan/inference_worker.py	/^net = caffe.Net('\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/caffe_models\/caffe_model_1\/caffenet_deploy_1.prototxt',$/;"	v
+net	ryan/origin.py	/^net = caffe.Net('\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/caffe_models\/caffe_model_1\/caffenet_deploy_1.prototxt',$/;"	v
+net	ryan/worker_inference.py	/^net = caffe.Net('\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/caffe_models\/caffe_model_1\/caffenet_deploy_1.prototxt',$/;"	v
+net1	ryan/inference_worker.py	/^net1 = caffe.Net('\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/caffe_models\/caffe_model_1\/caffenet_deploy_1.prototxt',$/;"	v
+net1	ryan/worker_inference.py	/^net1 = caffe.Net('\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/caffe_models\/caffe_model_1\/caffenet_deploy_1.prototxt',$/;"	v
 net_	examples/cpp_classification/classification.cpp	/^  shared_ptr<Net<float> > net_;$/;"	m	class:Classifier	file:
 net_	include/caffe/solver.hpp	/^  shared_ptr<Net<Dtype> > net_;$/;"	m	class:caffe::Solver
 net_	src/caffe/test/test_net.cpp	/^  shared_ptr<Net<Dtype> > net_;$/;"	m	class:caffe::NetTest	file:
@@ -6532,6 +6570,11 @@ original_working_dir_	src/gtest/gtest-all.cpp	/^  internal::FilePath original_wo
 os_stack_trace_getter	src/gtest/gtest-all.cpp	/^OsStackTraceGetterInterface* UnitTestImpl::os_stack_trace_getter() {$/;"	f	class:testing::internal::UnitTestImpl
 os_stack_trace_getter_	src/gtest/gtest-all.cpp	/^  OsStackTraceGetterInterface* os_stack_trace_getter_;$/;"	m	class:testing::internal::UnitTestImpl	file:
 out	ryan/inference.py	/^    out = net.forward_threaded()$/;"	v
+out	ryan/inference_worker.py	/^out = net.output()$/;"	v
+out	ryan/origin.py	/^    out = net.forward_threaded()$/;"	v
+out	ryan/worker_inference.py	/^out = net.forward()$/;"	v
+out1	ryan/inference_worker.py	/^out1 = net1.output()$/;"	v
+out1	ryan/worker_inference.py	/^out1 = net1.forward()$/;"	v
 out_max_val_	include/caffe/layers/argmax_layer.hpp	/^  bool out_max_val_;$/;"	m	class:caffe::ArgMaxLayer
 out_spatial_dim_	include/caffe/layers/base_conv_layer.hpp	/^  int out_spatial_dim_;$/;"	m	class:caffe::BaseConvolutionLayer
 outcome	src/gtest/gtest-all.cpp	/^  DeathTestOutcome outcome() const { return outcome_; }$/;"	f	class:testing::internal::DeathTestImpl
@@ -6649,9 +6692,20 @@ power_top_vec_	include/caffe/layers/lrn_layer.hpp	/^  vector<Blob<Dtype>*> power
 pre_pad_	include/caffe/layers/cudnn_lcn_layer.hpp	/^  int size_, pre_pad_;$/;"	m	class:caffe::CuDNNLCNLayer
 pre_pad_	include/caffe/layers/lrn_layer.hpp	/^  int pre_pad_;$/;"	m	class:caffe::LRNLayer
 pred_probas	ryan/inference.py	/^    pred_probas = out['prob']$/;"	v
+pred_probas	ryan/inference_worker.py	/^pred_probas = out1['prob']$/;"	v
+pred_probas	ryan/inference_worker.py	/^pred_probas = out['prob']$/;"	v
+pred_probas	ryan/origin.py	/^    pred_probas = out['prob']$/;"	v
+pred_probas	ryan/worker_inference.py	/^pred_probas = out1['prob']$/;"	v
+pred_probas	ryan/worker_inference.py	/^pred_probas = out['prob']$/;"	v
 predict	python/caffe/classifier.py	/^    def predict(self, inputs, oversample=True):$/;"	m	class:Classifier
 preds	ryan/inference.py	/^    preds = preds + [pred_probas.argmax()]$/;"	v
 preds	ryan/inference.py	/^preds = []$/;"	v
+preds	ryan/inference_worker.py	/^preds = []$/;"	v
+preds	ryan/inference_worker.py	/^preds = preds + [pred_probas.argmax()]$/;"	v
+preds	ryan/origin.py	/^    preds = preds + [pred_probas.argmax()]$/;"	v
+preds	ryan/origin.py	/^preds = []$/;"	v
+preds	ryan/worker_inference.py	/^preds = []$/;"	v
+preds	ryan/worker_inference.py	/^preds = preds + [pred_probas.argmax()]$/;"	v
 prefetch_	include/caffe/layers/base_data_layer.hpp	/^  vector<shared_ptr<Batch<Dtype> > > prefetch_;$/;"	m	class:caffe::BasePrefetchingDataLayer
 prefetch_current_	include/caffe/layers/base_data_layer.hpp	/^  Batch<Dtype>* prefetch_current_;$/;"	m	class:caffe::BasePrefetchingDataLayer
 prefetch_free_	include/caffe/layers/base_data_layer.hpp	/^  BlockingQueue<Batch<Dtype>*> prefetch_free_;$/;"	m	class:caffe::BasePrefetchingDataLayer
@@ -6827,6 +6881,7 @@ set_mode_gpu	matlab/+caffe/private/caffe_.cpp	/^static void set_mode_gpu(MEX_ARG
 set_mode_gpu	matlab/+caffe/set_mode_gpu.m	/^function set_mode_gpu()$/;"	f
 set_mode_gpu	python/caffe/_caffe.cpp	/^void set_mode_gpu() { Caffe::set_mode(Caffe::GPU); }$/;"	f	namespace:caffe
 set_multiprocess	include/caffe/common.hpp	/^  inline static void set_multiprocess(bool val) { Get().multiprocess_ = val; }$/;"	f	class:caffe::Caffe
+set_net	src/caffe/worker.cpp	/^void Workload::set_net(Net<float>&n){$/;"	f	class:caffe::Workload
 set_os_stack_trace_getter	src/gtest/gtest-all.cpp	/^void UnitTestImpl::set_os_stack_trace_getter($/;"	f	class:testing::internal::UnitTestImpl
 set_outcome	src/gtest/gtest-all.cpp	/^  void set_outcome(DeathTestOutcome an_outcome) { outcome_ = an_outcome; }$/;"	f	class:testing::internal::DeathTestImpl
 set_param_propagate_down	include/caffe/layer.hpp	/^  inline void set_param_propagate_down(const int param_id, const bool value) {$/;"	f	class:caffe::Layer
@@ -6940,6 +6995,9 @@ stable_prod_grad_	include/caffe/layers/eltwise_layer.hpp	/^  bool stable_prod_gr
 stack_trace_depth_	src/gtest/gtest-all.cpp	/^  internal::Int32 stack_trace_depth_;$/;"	m	class:testing::internal::GTestFlagSaver	file:
 start	include/caffe/worker.hpp	/^    int start[MAX_THREAD_NUM];$/;"	m	class:caffe::Workload
 start	ryan/inference.py	/^start = time.time()$/;"	v
+start	ryan/inference_worker.py	/^start = time.time()$/;"	v
+start	ryan/origin.py	/^start = time.time()$/;"	v
+start	ryan/worker_inference.py	/^start = time.time()$/;"	v
 start_cpu_	include/caffe/util/benchmark.hpp	/^  boost::posix_time::ptime start_cpu_;$/;"	m	class:caffe::Timer
 start_from_terminal	examples/web_demo/app.py	/^def start_from_terminal(app):$/;"	f
 start_gpu_	include/caffe/util/benchmark.hpp	/^  cudaEvent_t start_gpu_;$/;"	m	class:caffe::Timer
@@ -6996,6 +7054,9 @@ swap_endian	examples/siamese/convert_mnist_siamese_data.cpp	/^uint32_t swap_endi
 sync	src/caffe/util/blocking_queue.cpp	/^class BlockingQueue<T>::sync {$/;"	c	class:caffe::BlockingQueue	file:
 sync_	include/caffe/util/blocking_queue.hpp	/^  shared_ptr<sync> sync_;$/;"	m	class:caffe::BlockingQueue
 t0	ryan/inference.py	/^    t0 = time.time()$/;"	v
+t0	ryan/inference_worker.py	/^t0 = time.time()$/;"	v
+t0	ryan/origin.py	/^    t0 = time.time()$/;"	v
+t0	ryan/worker_inference.py	/^t0 = time.time()$/;"	v
 tanh	src/caffe/layers/lstm_unit_layer.cpp	/^inline Dtype tanh(Dtype x) {$/;"	f	namespace:caffe
 tanh_naive	src/caffe/test/test_tanh_layer.cpp	/^double tanh_naive(double x) {$/;"	f	namespace:caffe
 targets	src/caffe/test/test_data/generate_sample_data.py	/^targets = np.random.randn(num_rows, 1)$/;"	v
@@ -7013,6 +7074,7 @@ temp_	include/caffe/layers/scale_layer.hpp	/^  Blob<Dtype> temp_;$/;"	m	class:ca
 temp_	include/caffe/sgd_solvers.hpp	/^  vector<shared_ptr<Blob<Dtype> > > history_, update_, temp_;$/;"	m	class:caffe::SGDSolver
 test	tools/caffe.cpp	/^RegisterBrewFunction(test);$/;"	v
 test	tools/caffe.cpp	/^int test() {$/;"	f
+testNet	src/caffe/worker.cpp	/^void Workload::testNet(){$/;"	f	class:caffe::Workload
 test_	src/gtest/gtest.h	/^    DeathTest* const test_;$/;"	m	class:testing::internal::DeathTest::ReturnSentinel
 test_0	python/caffe/test/test_net.py	/^    def test_0(self):$/;"	m	class:TestLevels
 test_1	python/caffe/test/test_net.py	/^    def test_1(self):$/;"	m	class:TestLevels
@@ -7049,7 +7111,14 @@ test_forward_backward	python/caffe/test/test_net.py	/^    def test_forward_backw
 test_forward_start_end	python/caffe/test/test_net.py	/^    def test_forward_start_end(self):$/;"	m	class:TestNet
 test_ids	ryan/inference.py	/^    test_ids = test_ids + [img_path.split('\/')[-1][:-4]]$/;"	v
 test_ids	ryan/inference.py	/^test_ids = []$/;"	v
+test_ids	ryan/inference_worker.py	/^test_ids = []$/;"	v
+test_ids	ryan/inference_worker.py	/^test_ids = test_ids + [img_path.split('\/')[-1][:-4]]$/;"	v
+test_ids	ryan/origin.py	/^    test_ids = test_ids + [img_path.split('\/')[-1][:-4]]$/;"	v
+test_ids	ryan/origin.py	/^test_ids = []$/;"	v
+test_ids	ryan/worker_inference.py	/^test_ids = []$/;"	v
+test_ids	ryan/worker_inference.py	/^test_ids = test_ids + [img_path.split('\/')[-1][:-4]]$/;"	v
 test_img_paths	ryan/inference.py	/^test_img_paths = [img_path for img_path in glob.glob("\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/*.jpg")]$/;"	v
+test_img_paths	ryan/origin.py	/^test_img_paths = [img_path for img_path in glob.glob("\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/*.jpg")]$/;"	v
 test_indices_	src/gtest/gtest.h	/^  std::vector<int> test_indices_;$/;"	m	class:testing::TestCase
 test_info_list	src/gtest/gtest.h	/^  const std::vector<TestInfo*>& test_info_list() const {$/;"	f	class:testing::TestCase
 test_info_list	src/gtest/gtest.h	/^  std::vector<TestInfo*>& test_info_list() { return test_info_list_; }$/;"	f	class:testing::TestCase
@@ -7156,9 +7225,15 @@ train	tools/caffe.cpp	/^int train() {$/;"	f
 training_dirname	examples/finetune_flickr_style/assemble_data.py	/^        training_dirname = os.path.join(caffe_dirname, 'data\/flickr_style')$/;"	v
 training_dirname	examples/finetune_flickr_style/assemble_data.py	/^training_dirname = os.path.join(caffe_dirname, 'data\/flickr_style')$/;"	v
 transform_img	ryan/inference.py	/^def transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT):$/;"	f
+transform_img	ryan/inference_worker.py	/^def transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT):$/;"	f
+transform_img	ryan/origin.py	/^def transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT):$/;"	f
+transform_img	ryan/worker_inference.py	/^def transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT):$/;"	f
 transform_param_	include/caffe/layers/base_data_layer.hpp	/^  TransformationParameter transform_param_;$/;"	m	class:caffe::BaseDataLayer
 transformed_data_	include/caffe/layers/base_data_layer.hpp	/^  Blob<Dtype> transformed_data_;$/;"	m	class:caffe::BasePrefetchingDataLayer
 transformer	ryan/inference.py	/^transformer = caffe.io.Transformer({'data': net.blobs['data'].data.shape})$/;"	v
+transformer	ryan/inference_worker.py	/^transformer = caffe.io.Transformer({'data': net.blobs['data'].data.shape})$/;"	v
+transformer	ryan/origin.py	/^transformer = caffe.io.Transformer({'data': net.blobs['data'].data.shape})$/;"	v
+transformer	ryan/worker_inference.py	/^transformer = caffe.io.Transformer({'data': net.blobs['data'].data.shape})$/;"	v
 transpose_	include/caffe/layers/inner_product_layer.hpp	/^  bool transpose_;  \/\/\/< if true, assume transposed weights$/;"	m	class:caffe::InnerProductLayer
 true_type	src/gtest/gtest.h	/^typedef bool_constant<true> true_type;$/;"	t	namespace:std::tr1
 try_peek	src/caffe/util/blocking_queue.cpp	/^bool BlockingQueue<T>::try_peek(T* t) {$/;"	f	class:caffe::BlockingQueue
@@ -8726,7 +8801,9 @@ variance_	include/caffe/layers/mvn_layer.hpp	/^  Blob<Dtype> mean_, variance_, t
 version	matlab/+caffe/private/caffe_.cpp	/^static void version(MEX_ARGS) {$/;"	f	file:
 version	matlab/+caffe/version.m	/^function version_str = version()$/;"	f
 vsnprintf	src/gtest/gtest-all.cpp	1439;"	d	file:
+w	ryan/inference_worker.py	/^w = caffe.Workload(4)$/;"	v
 w	ryan/test.py	/^w = caffe.Workload(4)$/;"	v
+w1	ryan/inference_worker.py	/^w1 = caffe.Workload(4)$/;"	v
 w2	ryan/test.py	/^w2 = caffe.Workload(4)$/;"	v
 weight_cpu_gemm	src/caffe/layers/base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::weight_cpu_gemm(const Dtype* input,$/;"	f	class:caffe::BaseConvolutionLayer
 weight_gpu_gemm	src/caffe/layers/base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::weight_gpu_gemm(const Dtype* input,$/;"	f	class:caffe::BaseConvolutionLayer
@@ -8741,6 +8818,7 @@ width_	include/caffe/layers/pooling_layer.hpp	/^  int height_, width_;$/;"	m	cla
 width_	src/caffe/test/test_gradient_based_solver.cpp	/^  int num_, channels_, height_, width_;$/;"	m	class:caffe::GradientBasedSolverTest	file:
 width_	src/caffe/test/test_hdf5_output_layer.cpp	/^  int width_;$/;"	m	class:caffe::HDF5OutputLayerTest	file:
 width_	src/caffe/test/test_memory_data_layer.cpp	/^  int width_;$/;"	m	class:caffe::MemoryDataLayerTest	file:
+worker	ryan/inference_worker.py	/^worker = caffe.Worker(4)$/;"	v
 worker	ryan/test.py	/^worker = caffe.Worker(4)$/;"	v
 worker_thread	src/caffe/worker.cpp	/^void Worker::worker_thread(int tid){$/;"	f	class:caffe::Worker
 workloads	include/caffe/worker.hpp	/^    Workload * workloads[MAX_THREAD_NUM];$/;"	m	class:caffe::Worker

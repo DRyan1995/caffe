@@ -185,6 +185,57 @@ def _Net_forward_threaded(self, blobs=None, start=None, end=None, **kwargs):
     # Unpack blobs to extract
     return {out: self.blobs[out].data for out in outputs}
 
+
+def _Net_Output(self, blobs=None, start=None, end=None, **kwargs):
+    if blobs is None:
+        blobs = []
+
+    if start is not None:
+        start_ind = list(self._layer_names).index(start)
+    else:
+        start_ind = 0
+
+    if end is not None:
+        end_ind = list(self._layer_names).index(end)
+        outputs = set(self.top_names[end] + blobs)
+    else:
+        end_ind = len(self.layers) - 1
+        outputs = set(self.outputs + blobs)
+
+    return {out: self.blobs[out].data for out in outputs}
+
+
+def _Net_Index(self, blobs=None, start=None, end=None, **kwargs):
+
+    if blobs is None:
+        blobs = []
+
+    if start is not None:
+        start_ind = list(self._layer_names).index(start)
+    else:
+        start_ind = 0
+
+    if end is not None:
+        end_ind = list(self._layer_names).index(end)
+        outputs = set(self.top_names[end] + blobs)
+    else:
+        end_ind = len(self.layers) - 1
+        outputs = set(self.outputs + blobs)
+
+    if kwargs:
+        if set(kwargs.keys()) != set(self.inputs):
+            raise Exception('Input blob arguments do not match net inputs.')
+        # Set input according to defined shapes and make arrays single and
+        # C-contiguous as Caffe expects.
+        for in_, blob in six.iteritems(kwargs):
+            if blob.shape[0] != self.blobs[in_].shape[0]:
+                raise Exception('Input is not batch sized')
+            self.blobs[in_].data[...] = blob
+
+    return start_ind, end_ind
+
+# end Ryan
+
 def _Net_backward(self, diffs=None, start=None, end=None, **kwargs):
     """
     Backward pass: prepare diffs and run the net backward.
@@ -385,6 +436,8 @@ Net.blob_loss_weights = _Net_blob_loss_weights
 Net.layer_dict = _Net_layer_dict
 Net.params = _Net_params
 Net.forward = _Net_forward
+Net.index = _Net_Index
+Net.output = _Net_Output
 Net.forward_threaded = _Net_forward_threaded
 Net.backward = _Net_backward
 Net.forward_all = _Net_forward_all

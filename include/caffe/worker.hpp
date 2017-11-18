@@ -6,6 +6,7 @@
 #include "thread"
 
 #include "caffe/blob.hpp"
+#include "caffe/net.hpp"
 #include "caffe/common.hpp"
 #include "caffe/layer.hpp"
 #include "caffe/proto/caffe.pb.h"
@@ -14,7 +15,7 @@
 
 namespace caffe{
 
-class Workload{
+class Workload{ // each inference create a workload
 public:
     Workload(int);
     int num; // thread number
@@ -22,14 +23,19 @@ public:
     int get_end(int index);
     void set_start(int index, int val);
     void set_end(int index, int val);
+    void set_net(Net<float> &);
+    void testNet();
+    float loss;
     int finished;
+
 private:
     int start[MAX_THREAD_NUM];
     int end[MAX_THREAD_NUM];
-// friend class Worker;
+    Net<float> * myNet;
+friend class Worker;
 };
 
-class Worker{
+class Worker{ // worker works forever like server
 public:
     Worker(int);
     void get_threads_num();

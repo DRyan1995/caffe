@@ -56,13 +56,19 @@ void Worker::worker_thread(int tid){
     std::cout << "thread " << tid << "running" << std::endl;
     while (1){
         if (workloads[tid] == NULL){
-            usleep(1);
+            usleep(1); // TODO: if delete, program stuck.
             // cout << tid << "waiting" << endl;
             continue;
         }
 
         cout << "executing thread " << tid << " of " << this->number_of_threads-1<< endl;
-        usleep(1000*1000*1);
+        //start computing
+        for (int i = this->workloads[tid]->start[tid]; i <= this->workloads[tid]->end[tid]; ++i){
+            float layer_loss = workloads[tid]->myNet->layers_[i]->Forward(workloads[tid]->myNet->bottom_vecs_[i], workloads[tid]->myNet->top_vecs_[i]);
+            workloads[tid] -> loss += layer_loss;
+        }
+        //end computing
+
         if (tid == this->number_of_threads - 1){
             this->workloads[tid]->finished = 1;
             this->workloads[tid] = NULL;
@@ -88,6 +94,21 @@ Workload::Workload(int x){
     memset(this->end, 0, sizeof(this->end));
     this->num = x;
     this->finished = -1;
+    this-> myNet = NULL;
+    this->loss = 0.0f;
+}
+
+void Workload::set_net(Net<float>&n){
+    this->myNet = &n;
+}
+
+void Workload::testNet(){
+    using namespace std;
+    if (this->myNet == NULL){
+        cout << "mynet null error" << endl;
+        exit(-1);
+    }
+    cout << this->myNet->debug_info_ << endl;
 }
 
 int Workload::get_start(int index){

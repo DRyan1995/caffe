@@ -544,11 +544,13 @@ BOOST_PYTHON_MODULE(_caffe) {
 
   bp::class_<Workload>("Workload", bp::init<int>())
     .def_readwrite("num", &Workload::num)
-    .def_readwrite("finished", &Workload::finished)
+    .def_readonly("finished", &Workload::finished)
     .def("get_start", &Workload::get_start)
     .def("get_end", &Workload::get_end)
     .def("set_start", &Workload::set_start)
     .def("set_end", &Workload::set_end)
+    .def("set_net", &Workload::set_net)
+    .def("testNet", &Workload::testNet)
   ;
   // BP_REGISTER_SHARED_PTR_TO_PYTHON(Worker);
 

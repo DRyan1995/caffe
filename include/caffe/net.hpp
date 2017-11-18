@@ -342,7 +342,8 @@ class Net {
   vector<Callback*> after_forward_;
   vector<Callback*> before_backward_;
   vector<Callback*> after_backward_;
-
+friend class Workload;
+friend class Worker;
 DISABLE_COPY_AND_ASSIGN(Net);
 };
 
