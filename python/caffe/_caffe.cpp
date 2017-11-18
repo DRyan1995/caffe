@@ -13,6 +13,7 @@
 #include <string>  // NOLINT(build/include_order)
 #include <vector>  // NOLINT(build/include_order)
 #include <fstream>  // NOLINT
+#include "thread"
 
 #include "caffe/caffe.hpp"
 #include "caffe/layers/memory_data_layer.hpp"
@@ -534,9 +535,22 @@ BOOST_PYTHON_MODULE(_caffe) {
         "AdamSolver", bp::init<string>());
 
   bp::class_<Worker>("Worker", bp::init<int>())
-    .def("Display", &Worker::Display)
+    .def("get_threads_num", &Worker::get_threads_num)
+    .def("create_threads", &Worker::create_threads)
+    .def("destroy_threads", &Worker::destroy_threads)
+    .def("worker_thread", &Worker::worker_thread)
+    .def("assign_workload", &Worker::assign_workload)
   ;
-  BP_REGISTER_SHARED_PTR_TO_PYTHON(Worker);
+
+  bp::class_<Workload>("Workload", bp::init<int>())
+    .def_readwrite("num", &Workload::num)
+    .def_readwrite("finished", &Workload::finished)
+    .def("get_start", &Workload::get_start)
+    .def("get_end", &Workload::get_end)
+    .def("set_start", &Workload::set_start)
+    .def("set_end", &Workload::set_end)
+  ;
+  // BP_REGISTER_SHARED_PTR_TO_PYTHON(Worker);
 
 
 

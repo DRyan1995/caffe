@@ -183,7 +183,7 @@ BLOB_STYLE	python/caffe/draw.py	/^BLOB_STYLE = {'shape': 'octagon',$/;"	v
 BNLLLayer	include/caffe/layers/bnll_layer.hpp	/^  explicit BNLLLayer(const LayerParameter& param)$/;"	f	class:caffe::BNLLLayer
 BNLLLayer	include/caffe/layers/bnll_layer.hpp	/^class BNLLLayer : public NeuronLayer<Dtype> {$/;"	c	namespace:caffe
 BOOST_PYTHON_MODULE	python/caffe/_caffe.cpp	/^BOOST_PYTHON_MODULE(_caffe) {$/;"	f	namespace:caffe
-BP_REGISTER_SHARED_PTR_TO_PYTHON	python/caffe/_caffe.cpp	30;"	d	file:
+BP_REGISTER_SHARED_PTR_TO_PYTHON	python/caffe/_caffe.cpp	31;"	d	file:
 BUILD_DIR	Makefile	/^	BUILD_DIR := $(DEBUG_BUILD_DIR)$/;"	m
 BUILD_DIR	Makefile	/^	BUILD_DIR := $(RELEASE_BUILD_DIR)$/;"	m
 BUILD_DIR_LINK	Makefile	/^BUILD_DIR_LINK := $(BUILD_DIR)$/;"	m
@@ -832,7 +832,6 @@ DeleteThreadLocalValue	src/gtest/gtest.h	/^extern "C" inline void DeleteThreadLo
 Detector	python/caffe/detector.py	/^class Detector(caffe.Net):$/;"	c
 DeviceQuery	src/caffe/common.cpp	/^void Caffe::DeviceQuery() {$/;"	f	class:caffe::Caffe
 DirectoryExists	src/gtest/gtest-all.cpp	/^bool FilePath::DirectoryExists() const {$/;"	f	class:testing::internal::FilePath
-Display	src/caffe/worker.cpp	/^void Worker::Display(){$/;"	f	class:caffe::Worker
 DistanceBetweenSignAndMagnitudeNumbers	src/gtest/gtest.h	/^  static Bits DistanceBetweenSignAndMagnitudeNumbers(const Bits &sam1,$/;"	f	class:testing::internal::FloatingPoint
 Double	src/gtest/gtest.h	/^typedef FloatingPoint<double> Double;$/;"	t	namespace:testing::internal
 DoubleLE	src/gtest/gtest-all.cpp	/^AssertionResult DoubleLE(const char* expr1, const char* expr2,$/;"	f	namespace:testing
@@ -2044,6 +2043,7 @@ LossLayer	include/caffe/layers/loss_layer.hpp	/^  explicit LossLayer(const Layer
 LossLayer	include/caffe/layers/loss_layer.hpp	/^class LossLayer : public Layer<Dtype> {$/;"	c	namespace:caffe
 MATLAB_CXXFLAGS	Makefile	/^MATLAB_CXXFLAGS := $(CXXFLAGS) -Wno-uninitialized$/;"	m
 MAT_SO_EXT	Makefile	/^	MAT_SO_EXT := $(shell $(MATLAB_DIR)\/bin\/mexext)$/;"	m
+MAX_THREAD_NUM	include/caffe/worker.hpp	13;"	d
 MDB_CHECK	include/caffe/util/db_lmdb.hpp	/^inline void MDB_CHECK(int mdb_status) {$/;"	f	namespace:caffe::db
 MEX_ARGS	matlab/+caffe/private/caffe_.cpp	20;"	d	file:
 MISSING_IMAGE_SHA1	examples/finetune_flickr_style/assemble_data.py	/^MISSING_IMAGE_SHA1 = '6a92790b1c2a301c6e7ddef645dca1f53ea97ac2'$/;"	v
@@ -2149,7 +2149,7 @@ NONEMPTY_WARN_REPORT	Makefile	/^NONEMPTY_WARN_REPORT := $(BUILD_DIR)\/$(WARNS_EX
 NONGEN_CXX_SRCS	Makefile	/^NONGEN_CXX_SRCS := $(shell find \\$/;"	m
 NOT_IMPLEMENTED	include/caffe/common.hpp	70;"	d
 NO_GPU	include/caffe/util/device_alternate.hpp	10;"	d
-NPY_ARRAY_C_CONTIGUOUS	python/caffe/_caffe.cpp	25;"	d	file:
+NPY_ARRAY_C_CONTIGUOUS	python/caffe/_caffe.cpp	26;"	d	file:
 NPY_DTYPE	python/caffe/_caffe.cpp	/^const int NPY_DTYPE = NPY_FLOAT32;$/;"	m	namespace:caffe	file:
 NPY_NO_DEPRECATED_API	python/caffe/_caffe.cpp	4;"	d	file:
 NUM	include/caffe/layers/window_data_layer.hpp	/^  enum WindowField { IMAGE_INDEX, LABEL, OVERLAP, X1, Y1, X2, Y2, NUM };$/;"	e	enum:caffe::WindowDataLayer::WindowField
@@ -2453,7 +2453,7 @@ ProtoTest	src/caffe/test/test_protobuf.cpp	/^class ProtoTest : public ::testing:
 PushGTestTrace	src/gtest/gtest-all.cpp	/^void UnitTest::PushGTestTrace(const internal::TraceInfo& trace) {$/;"	f	class:testing::UnitTest
 Put	include/caffe/util/db_leveldb.hpp	/^  virtual void Put(const string& key, const string& value) {$/;"	f	class:caffe::db::LevelDBTransaction
 Put	src/caffe/util/db_lmdb.cpp	/^void LMDBTransaction::Put(const string& key, const string& value) {$/;"	f	class:caffe::db::LMDBTransaction
-PyArray_SetBaseObject	python/caffe/_caffe.cpp	26;"	d	file:
+PyArray_SetBaseObject	python/caffe/_caffe.cpp	27;"	d	file:
 PythonLayer	include/caffe/layers/python_layer.hpp	/^  PythonLayer(PyObject* self, const LayerParameter& param)$/;"	f	class:caffe::PythonLayer
 PythonLayer	include/caffe/layers/python_layer.hpp	/^class PythonLayer : public Layer<Dtype> {$/;"	c	namespace:caffe
 RE	src/gtest/gtest.h	/^  RE(const ::std::string& regex) { Init(regex.c_str()); }  \/\/ NOLINT$/;"	f	class:std::tr1::RE
@@ -4245,10 +4245,12 @@ WindowsDeathTest	src/gtest/gtest-all.cpp	/^class WindowsDeathTest : public Death
 WithParamInterface	src/gtest/gtest.h	/^class WithParamInterface {$/;"	c	namespace:testing
 WithinChannelBackward	src/caffe/layers/lrn_layer.cpp	/^void LRNLayer<Dtype>::WithinChannelBackward($/;"	f	class:caffe::LRNLayer
 WithinChannelForward	src/caffe/layers/lrn_layer.cpp	/^void LRNLayer<Dtype>::WithinChannelForward($/;"	f	class:caffe::LRNLayer
-Worker	include/caffe/worker.hpp	/^class Worker$/;"	c	namespace:caffe
+Worker	include/caffe/worker.hpp	/^class Worker{$/;"	c	namespace:caffe
 Worker	src/caffe/parallel.cpp	/^  explicit Worker(shared_ptr<Solver<Dtype> > rank0, int device,$/;"	f	class:caffe::Worker
 Worker	src/caffe/parallel.cpp	/^class Worker : public InternalThread {$/;"	c	namespace:caffe	file:
 Worker	src/caffe/worker.cpp	/^Worker::Worker(int x){$/;"	f	class:caffe::Worker
+Workload	include/caffe/worker.hpp	/^class Workload{$/;"	c	namespace:caffe
+Workload	src/caffe/worker.cpp	/^Workload::Workload(int x){$/;"	f	class:caffe::Workload
 WrapInputLayer	examples/cpp_classification/classification.cpp	/^void Classifier::WrapInputLayer(std::vector<cv::Mat>* input_channels) {$/;"	f	class:Classifier
 Write	src/gtest/gtest.h	/^inline int Write(int fd, const void* buf, unsigned int count) {$/;"	f	namespace:std::tr1::posix
 WriteProtoToBinaryFile	include/caffe/util/io.hpp	/^inline void WriteProtoToBinaryFile($/;"	f	namespace:caffe
@@ -4439,6 +4441,7 @@ array_to_blobproto	python/caffe/io.py	/^def array_to_blobproto(arr, diff=None):$
 array_to_datum	python/caffe/io.py	/^def array_to_datum(arr, label=None):$/;"	f
 arraylist_to_blobprotovector_str	python/caffe/io.py	/^def arraylist_to_blobprotovector_str(arraylist):$/;"	f
 assign_proto	python/caffe/net_spec.py	/^def assign_proto(proto, name, val):$/;"	f
+assign_workload	src/caffe/worker.cpp	/^void Worker::assign_workload(Workload &w){$/;"	f	class:caffe::Worker
 asum_data	src/caffe/blob.cpp	/^Dtype Blob<Dtype>::asum_data() const {$/;"	f	class:caffe::Blob
 asum_data	src/caffe/blob.cpp	/^template <> int Blob<int>::asum_data() const {$/;"	f	class:caffe::Blob
 asum_data	src/caffe/blob.cpp	/^template <> unsigned int Blob<unsigned int>::asum_data() const {$/;"	f	class:caffe::Blob
@@ -5332,6 +5335,7 @@ createPoolingDesc	include/caffe/util/cudnn.hpp	/^inline void createPoolingDesc(c
 createTensor4dDesc	include/caffe/util/cudnn.hpp	/^inline void createTensor4dDesc(cudnnTensorDescriptor_t* desc) {$/;"	f	namespace:caffe::cudnn
 create_field_index	tools/extra/plot_training_log.py.example	/^def create_field_index():$/;"	f
 create_handle_vec	matlab/+caffe/private/caffe_.cpp	/^static mxArray* create_handle_vec(int ptr_num) {$/;"	f	file:
+create_threads	src/caffe/worker.cpp	/^void Worker::create_threads(){$/;"	f	class:caffe::Worker
 crop	python/caffe/coord_map.py	/^def crop(top_from, top_to):$/;"	f
 crop	python/caffe/detector.py	/^    def crop(self, im, window):$/;"	m	class:Detector
 crop_copy	src/caffe/layers/crop_layer.cpp	/^void CropLayer<Dtype>::crop_copy(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::CropLayer
@@ -5483,6 +5487,7 @@ deprocess	examples/pycaffe/tools.py	/^    def deprocess(self, im):$/;"	m	class:S
 deprocess	python/caffe/io.py	/^    def deprocess(self, in_, data):$/;"	m	class:Transformer
 description	examples/finetune_flickr_style/assemble_data.py	/^        description='Download a subset of Flickr Style to a directory')$/;"	v
 dest_strides_	include/caffe/layers/crop_layer.hpp	/^  Blob<int> dest_strides_;$/;"	m	class:caffe::CropLayer
+destroy_threads	src/caffe/worker.cpp	/^void Worker::destroy_threads(){$/;"	f	class:caffe::Worker
 detect_selective_search	python/caffe/detector.py	/^    def detect_selective_search(self, image_fnames):$/;"	m	class:Detector
 detect_windows	python/caffe/detector.py	/^    def detect_windows(self, images_windows):$/;"	m	class:Detector
 device	include/caffe/test/test_caffe_main.hpp	/^  static const Caffe::Brew device = Caffe::CPU;$/;"	m	struct:caffe::CPUDevice
@@ -5533,6 +5538,7 @@ elapsed_time_	src/gtest/gtest.h	/^  TimeInMillis elapsed_time_;$/;"	m	class:test
 element_type	src/gtest/gtest.h	/^  typedef T element_type;$/;"	t	class:testing::internal::linked_ptr
 embed_image_html	examples/web_demo/app.py	/^def embed_image_html(image):$/;"	f
 empty	src/gtest/gtest.h	/^  bool empty() const { return (c_str() != NULL) && (length() == 0); }$/;"	f	class:testing::internal::String
+end	include/caffe/worker.hpp	/^    int end[MAX_THREAD_NUM];$/;"	m	class:caffe::Workload
 end	ryan/inference.py	/^end = time.time()$/;"	v
 end	src/gtest/gtest.h	/^  const_iterator end() const { return array_ + size_; }$/;"	f	class:testing::internal::NativeArray
 end	src/gtest/gtest.h	/^  iterator end() const { return iterator(impl_->End()); }$/;"	f	class:testing::internal::ParamGenerator
@@ -5683,6 +5689,7 @@ filler_param_	src/caffe/test/test_filler.cpp	/^  FillerParameter filler_param_;$
 fillers_	include/caffe/layers/dummy_data_layer.hpp	/^  vector<shared_ptr<Filler<Dtype> > > fillers_;$/;"	m	class:caffe::DummyDataLayer
 filter_	src/gtest/gtest-all.cpp	/^  String filter_;$/;"	m	class:testing::internal::GTestFlagSaver	file:
 filter_desc_	include/caffe/layers/cudnn_conv_layer.hpp	/^  cudnnFilterDescriptor_t      filter_desc_;$/;"	m	class:caffe::CuDNNConvolutionLayer
+finished	include/caffe/worker.hpp	/^    int finished;$/;"	m	class:caffe::Workload
 finished_	src/gtest/gtest.h	/^  bool finished_;  \/\/ true iff we know that the thread function has finished.$/;"	m	class:std::tr1::ThreadWithParam
 first_reshape_	include/caffe/layers/filter_layer.hpp	/^  bool first_reshape_;$/;"	m	class:caffe::FilterLayer
 fix_initial_nan_learning_rate	tools/extra/parse_log.py	/^def fix_initial_nan_learning_rate(dict_list):$/;"	f
@@ -5844,6 +5851,7 @@ get_data_file_type	tools/extra/plot_training_log.py.example	/^def get_data_file_
 get_data_from_tag	examples/pycaffe/layers/pascal_multilabel_datalayers.py	/^    def get_data_from_tag(node, tag):$/;"	f	function:load_pascal_annotation
 get_data_label	tools/extra/plot_training_log.py.example	/^def get_data_label(path_to_log):$/;"	f
 get_edge_label	python/caffe/draw.py	/^def get_edge_label(layer):$/;"	f
+get_end	src/caffe/worker.cpp	/^int Workload::get_end(int index){$/;"	f	class:caffe::Workload
 get_field_descriptions	tools/extra/plot_training_log.py.example	/^def get_field_descriptions(chart_type):$/;"	f
 get_field_indices	tools/extra/plot_training_log.py.example	/^def get_field_indices(x_axis_field, y_axis_field):$/;"	f
 get_gpus	tools/caffe.cpp	/^static void get_gpus(vector<int>* gpus) {$/;"	f	file:
@@ -5866,8 +5874,10 @@ get_pytype	python/caffe/_caffe.cpp	/^    const PyTypeObject* get_pytype() {$/;"	
 get_solver	matlab/+caffe/get_solver.m	/^function solver = get_solver(solver_file)$/;"	f
 get_solver	matlab/+caffe/private/caffe_.cpp	/^static void get_solver(MEX_ARGS) {$/;"	f	file:
 get_stages_from_flags	tools/caffe.cpp	/^vector<string> get_stages_from_flags() {$/;"	f
+get_start	src/caffe/worker.cpp	/^int Workload::get_start(int index){$/;"	f	class:caffe::Workload
 get_start_time	tools/extra/extract_seconds.py	/^def get_start_time(line_iterable, year):$/;"	f
 get_supported_chart_types	tools/extra/plot_training_log.py.example	/^def get_supported_chart_types():$/;"	f
+get_threads_num	src/caffe/worker.cpp	/^void Worker::get_threads_num(){$/;"	f	class:caffe::Worker
 global_pooling_	include/caffe/layers/pooling_layer.hpp	/^  bool global_pooling_;$/;"	m	class:caffe::PoolingLayer
 global_test_part_result_reporter_mutex_	src/gtest/gtest-all.cpp	/^  internal::Mutex global_test_part_result_reporter_mutex_;$/;"	m	class:testing::internal::UnitTestImpl	file:
 global_test_part_result_repoter_	src/gtest/gtest-all.cpp	/^  TestPartResultReporterInterface* global_test_part_result_repoter_;$/;"	m	class:testing::internal::UnitTestImpl	file:
@@ -6346,6 +6356,7 @@ normalization_	include/caffe/layers/softmax_loss_layer.hpp	/^  LossParameter_Nor
 normalizer_	include/caffe/layers/sigmoid_cross_entropy_loss_layer.hpp	/^  Dtype normalizer_;$/;"	m	class:caffe::SigmoidCrossEntropyLossLayer
 notified_	src/gtest/gtest.h	/^  volatile bool notified_;$/;"	m	class:std::tr1::Notification
 num	include/caffe/blob.hpp	/^  inline int num() const { return LegacyShape(0); }$/;"	f	class:caffe::Blob
+num	include/caffe/worker.hpp	/^    int num; \/\/ thread number$/;"	m	class:caffe::Workload
 num_	include/caffe/layers/base_conv_layer.hpp	/^  int num_;$/;"	m	class:caffe::BaseConvolutionLayer
 num_	include/caffe/layers/im2col_layer.hpp	/^  int num_;$/;"	m	class:caffe::Im2colLayer
 num_	include/caffe/layers/lrn_layer.hpp	/^  int num_;$/;"	m	class:caffe::LRNLayer
@@ -6379,6 +6390,7 @@ num_spatial_axes_	include/caffe/layers/base_conv_layer.hpp	/^  int num_spatial_a
 num_spatial_axes_	include/caffe/layers/im2col_layer.hpp	/^  int num_spatial_axes_;$/;"	m	class:caffe::Im2colLayer
 num_workers	examples/finetune_flickr_style/assemble_data.py	/^        num_workers = multiprocessing.cpu_count() + num_workers$/;"	v
 num_workers	examples/finetune_flickr_style/assemble_data.py	/^    num_workers = args.workers$/;"	v
+number_of_threads	include/caffe/worker.hpp	/^    int number_of_threads;$/;"	m	class:caffe::Worker
 nums_buffer_	include/caffe/layers/accuracy_layer.hpp	/^  Blob<Dtype> nums_buffer_;$/;"	m	class:caffe::AccuracyLayer
 offset	include/caffe/blob.hpp	/^  inline int offset(const int n, const int c = 0, const int h = 0,$/;"	f	class:caffe::Blob
 offset	include/caffe/blob.hpp	/^  inline int offset(const vector<int>& indices) const {$/;"	f	class:caffe::Blob
@@ -6798,6 +6810,7 @@ set_debug_info	include/caffe/net.hpp	/^  void set_debug_info(const bool value) {
 set_device	matlab/+caffe/private/caffe_.cpp	/^static void set_device(MEX_ARGS) {$/;"	f	file:
 set_device	matlab/+caffe/set_device.m	/^function set_device(device_id)$/;"	f
 set_elapsed_time	src/gtest/gtest.h	/^  void set_elapsed_time(TimeInMillis elapsed) { elapsed_time_ = elapsed; }$/;"	f	class:testing::TestResult
+set_end	src/caffe/worker.cpp	/^void Workload::set_end(int index, int val){$/;"	f	class:caffe::Workload
 set_forwarding_enabled	src/gtest/gtest-all.cpp	/^  void set_forwarding_enabled(bool enable) { forwarding_enabled_ = enable; }$/;"	f	class:testing::internal::TestEventRepeater
 set_gpu_data	src/caffe/blob.cpp	/^void Blob<Dtype>::set_gpu_data(Dtype* data) {$/;"	f	class:caffe::Blob
 set_gpu_data	src/caffe/syncedmem.cpp	/^void SyncedMemory::set_gpu_data(void* data) {$/;"	f	class:caffe::SyncedMemory
@@ -6826,6 +6839,7 @@ set_should_run	src/gtest/gtest.h	/^  void set_should_run(bool should) { should_r
 set_solver_count	include/caffe/common.hpp	/^  inline static void set_solver_count(int val) { Get().solver_count_ = val; }$/;"	f	class:caffe::Caffe
 set_solver_rank	include/caffe/common.hpp	/^  inline static void set_solver_rank(int val) { Get().solver_rank_ = val; }$/;"	f	class:caffe::Caffe
 set_spawned	src/gtest/gtest-all.cpp	/^  void set_spawned(bool is_spawned) { spawned_ = is_spawned; }$/;"	f	class:testing::internal::DeathTestImpl
+set_start	src/caffe/worker.cpp	/^void Workload::set_start(int index, int val){$/;"	f	class:caffe::Workload
 set_status	src/gtest/gtest-all.cpp	/^  void set_status(int a_status) { status_ = a_status; }$/;"	f	class:testing::internal::DeathTestImpl
 set_transpose	python/caffe/io.py	/^    def set_transpose(self, in_, order):$/;"	m	class:Transformer
 set_up_tc_	src/gtest/gtest.h	/^  Test::SetUpTestCaseFunc set_up_tc_;$/;"	m	class:testing::TestCase
@@ -6924,6 +6938,7 @@ src_strides_	include/caffe/layers/crop_layer.hpp	/^  Blob<int> src_strides_;$/;"
 ss_	src/gtest/gtest.h	/^  const internal::scoped_ptr< ::std::stringstream> ss_;$/;"	m	class:testing::Message
 stable_prod_grad_	include/caffe/layers/eltwise_layer.hpp	/^  bool stable_prod_grad_;$/;"	m	class:caffe::EltwiseLayer
 stack_trace_depth_	src/gtest/gtest-all.cpp	/^  internal::Int32 stack_trace_depth_;$/;"	m	class:testing::internal::GTestFlagSaver	file:
+start	include/caffe/worker.hpp	/^    int start[MAX_THREAD_NUM];$/;"	m	class:caffe::Workload
 start	ryan/inference.py	/^start = time.time()$/;"	v
 start_cpu_	include/caffe/util/benchmark.hpp	/^  boost::posix_time::ptime start_cpu_;$/;"	m	class:caffe::Timer
 start_from_terminal	examples/web_demo/app.py	/^def start_from_terminal(app):$/;"	f
@@ -7093,6 +7108,7 @@ thread_	src/gtest/gtest.h	/^  pthread_t thread_;  \/\/ The native thread object.
 thread_can_start_	src/gtest/gtest.h	/^  Notification* const thread_can_start_;$/;"	m	class:std::tr1::ThreadWithParam
 thread_instance_	src/caffe/common.cpp	/^static boost::thread_specific_ptr<Caffe> thread_instance_;$/;"	m	namespace:caffe	file:
 threading_list	scripts/cpp_lint.py	/^threading_list = ($/;"	v
+threads	include/caffe/worker.hpp	/^    std::vector<std::thread * > threads;$/;"	m	class:caffe::Worker
 threshold_	include/caffe/layers/dropout_layer.hpp	/^  Dtype threshold_;$/;"	m	class:caffe::DropoutLayer
 threshold_	include/caffe/layers/threshold_layer.hpp	/^  Dtype threshold_;$/;"	m	class:caffe::ThresholdLayer
 threshold_	include/caffe/test/test_gradient_check_util.hpp	/^  Dtype threshold_;$/;"	m	class:caffe::GradientChecker
@@ -8710,6 +8726,8 @@ variance_	include/caffe/layers/mvn_layer.hpp	/^  Blob<Dtype> mean_, variance_, t
 version	matlab/+caffe/private/caffe_.cpp	/^static void version(MEX_ARGS) {$/;"	f	file:
 version	matlab/+caffe/version.m	/^function version_str = version()$/;"	f
 vsnprintf	src/gtest/gtest-all.cpp	1439;"	d	file:
+w	ryan/test.py	/^w = caffe.Workload(4)$/;"	v
+w2	ryan/test.py	/^w2 = caffe.Workload(4)$/;"	v
 weight_cpu_gemm	src/caffe/layers/base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::weight_cpu_gemm(const Dtype* input,$/;"	f	class:caffe::BaseConvolutionLayer
 weight_gpu_gemm	src/caffe/layers/base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::weight_gpu_gemm(const Dtype* input,$/;"	f	class:caffe::BaseConvolutionLayer
 weight_offset_	include/caffe/layers/base_conv_layer.hpp	/^  int weight_offset_;$/;"	m	class:caffe::BaseConvolutionLayer
@@ -8723,7 +8741,9 @@ width_	include/caffe/layers/pooling_layer.hpp	/^  int height_, width_;$/;"	m	cla
 width_	src/caffe/test/test_gradient_based_solver.cpp	/^  int num_, channels_, height_, width_;$/;"	m	class:caffe::GradientBasedSolverTest	file:
 width_	src/caffe/test/test_hdf5_output_layer.cpp	/^  int width_;$/;"	m	class:caffe::HDF5OutputLayerTest	file:
 width_	src/caffe/test/test_memory_data_layer.cpp	/^  int width_;$/;"	m	class:caffe::MemoryDataLayerTest	file:
-worker	ryan/test.py	/^worker = caffe.Worker(1)$/;"	v
+worker	ryan/test.py	/^worker = caffe.Worker(4)$/;"	v
+worker_thread	src/caffe/worker.cpp	/^void Worker::worker_thread(int tid){$/;"	f	class:caffe::Worker
+workloads	include/caffe/worker.hpp	/^    Workload * workloads[MAX_THREAD_NUM];$/;"	m	class:caffe::Worker
 workspace	include/caffe/layers/cudnn_conv_layer.hpp	/^  void **workspace;  \/\/ aliases into workspaceData$/;"	m	class:caffe::CuDNNConvolutionLayer
 workspaceData	include/caffe/layers/cudnn_conv_layer.hpp	/^  void *workspaceData;  \/\/ underlying storage$/;"	m	class:caffe::CuDNNConvolutionLayer
 workspaceSizeInBytes	include/caffe/layers/cudnn_conv_layer.hpp	/^  size_t workspaceSizeInBytes;  \/\/ size of underlying storage$/;"	m	class:caffe::CuDNNConvolutionLayer
@@ -8738,7 +8758,6 @@ write_fd_	src/gtest/gtest-all.cpp	/^  int write_fd_;$/;"	m	class:testing::intern
 write_fd_	src/gtest/gtest.h	/^  int write_fd_;$/;"	m	class:testing::internal::InternalRunDeathTestFlag
 write_handle_	src/gtest/gtest-all.cpp	/^  AutoHandle write_handle_;$/;"	m	class:testing::internal::WindowsDeathTest	file:
 write_mean	matlab/+caffe/private/caffe_.cpp	/^static void write_mean(MEX_ARGS) {$/;"	f	file:
-x	include/caffe/worker.hpp	/^    int x;$/;"	m	class:caffe::Worker
 x	ryan/test.cpp	/^    int x;    $/;"	m	class:myClass	file:
 x_input_blob_	include/caffe/layers/recurrent_layer.hpp	/^  Blob<Dtype>* x_input_blob_;$/;"	m	class:caffe::RecurrentLayer
 x_norm_	include/caffe/layers/batch_norm_layer.hpp	/^  Blob<Dtype> mean_, variance_, temp_, x_norm_;$/;"	m	class:caffe::BatchNormLayer

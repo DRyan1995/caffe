@@ -4,59 +4,15 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-NPY_NO_DEPRECATED_API	/home/ryan/caffe/python/caffe/_caffe.cpp	/^#define NPY_NO_DEPRECATED_API /;"	macro	line:4	file:
-NPY_ARRAY_C_CONTIGUOUS	/home/ryan/caffe/python/caffe/_caffe.cpp	/^#define NPY_ARRAY_C_CONTIGUOUS /;"	macro	line:25	file:
-PyArray_SetBaseObject	/home/ryan/caffe/python/caffe/_caffe.cpp	/^#define PyArray_SetBaseObject(/;"	macro	line:26	file:
-BP_REGISTER_SHARED_PTR_TO_PYTHON	/home/ryan/caffe/python/caffe/_caffe.cpp	/^#define BP_REGISTER_SHARED_PTR_TO_PYTHON(/;"	macro	line:30	file:
-caffe	/home/ryan/caffe/python/caffe/_caffe.cpp	/^namespace caffe {$/;"	namespace	line:44	file:
-Dtype	/home/ryan/caffe/python/caffe/_caffe.cpp	/^typedef float Dtype;$/;"	typedef	line:47	namespace:caffe	file:
-NPY_DTYPE	/home/ryan/caffe/python/caffe/_caffe.cpp	/^const int NPY_DTYPE = NPY_FLOAT32;$/;"	member	line:48	namespace:caffe	file:
-set_mode_cpu	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void set_mode_cpu() { Caffe::set_mode(Caffe::CPU); }$/;"	function	line:51	namespace:caffe	signature:()
-set_mode_gpu	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void set_mode_gpu() { Caffe::set_mode(Caffe::GPU); }$/;"	function	line:52	namespace:caffe	signature:()
-InitLog	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void InitLog() {$/;"	function	line:54	namespace:caffe	signature:()
-InitLogLevel	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void InitLogLevel(int level) {$/;"	function	line:58	namespace:caffe	signature:(int level)
-InitLogLevelPipe	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void InitLogLevelPipe(int level, bool stderr) {$/;"	function	line:62	namespace:caffe	signature:(int level, bool stderr)
-Log	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Log(const string& s) {$/;"	function	line:67	namespace:caffe	signature:(const string& s)
-set_random_seed	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void set_random_seed(unsigned int seed) { Caffe::set_random_seed(seed); }$/;"	function	line:71	namespace:caffe	signature:(unsigned int seed)
-CheckFile	/home/ryan/caffe/python/caffe/_caffe.cpp	/^static void CheckFile(const string& filename) {$/;"	function	line:77	namespace:caffe	signature:(const string& filename)
-CheckContiguousArray	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void CheckContiguousArray(PyArrayObject* arr, string name,$/;"	function	line:86	namespace:caffe	signature:(PyArrayObject* arr, string name, int channels, int height, int width)
-Net_Init	/home/ryan/caffe/python/caffe/_caffe.cpp	/^shared_ptr<Net<Dtype> > Net_Init(string network_file, int phase,$/;"	function	line:109	namespace:caffe	signature:(string network_file, int phase, const int level, const bp::object& stages, const bp::object& weights)
-Net_Init_Load	/home/ryan/caffe/python/caffe/_caffe.cpp	/^shared_ptr<Net<Dtype> > Net_Init_Load($/;"	function	line:137	namespace:caffe	signature:( string param_file, string pretrained_param_file, int phase)
-Net_Save	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Net_Save(const Net<Dtype>& net, string filename) {$/;"	function	line:153	namespace:caffe	signature:(const Net<Dtype>& net, string filename)
-Net_SaveHDF5	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Net_SaveHDF5(const Net<Dtype>& net, string filename) {$/;"	function	line:159	namespace:caffe	signature:(const Net<Dtype>& net, string filename)
-Net_LoadHDF5	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Net_LoadHDF5(Net<Dtype>* net, string filename) {$/;"	function	line:163	namespace:caffe	signature:(Net<Dtype>* net, string filename)
-Net_SetInputArrays	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Net_SetInputArrays(Net<Dtype>* net, bp::object data_obj,$/;"	function	line:167	namespace:caffe	signature:(Net<Dtype>* net, bp::object data_obj, bp::object labels_obj)
-GetSolverFromFile	/home/ryan/caffe/python/caffe/_caffe.cpp	/^Solver<Dtype>* GetSolverFromFile(const string& filename) {$/;"	function	line:199	namespace:caffe	signature:(const string& filename)
-NdarrayConverterGenerator	/home/ryan/caffe/python/caffe/_caffe.cpp	/^struct NdarrayConverterGenerator {$/;"	struct	line:205	namespace:caffe	file:
-apply	/home/ryan/caffe/python/caffe/_caffe.cpp	/^struct NdarrayConverterGenerator::apply<Dtype*> {$/;"	struct	line:210	class:caffe::NdarrayConverterGenerator	file:
-type	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  struct type {$/;"	struct	line:211	struct:caffe::NdarrayConverterGenerator::apply	file:
-operator ()	/home/ryan/caffe/python/caffe/_caffe.cpp	/^    PyObject* operator() (Dtype* data) const {$/;"	function	line:212	struct:caffe::NdarrayConverterGenerator::apply::type	signature:(Dtype* data) const
-get_pytype	/home/ryan/caffe/python/caffe/_caffe.cpp	/^    const PyTypeObject* get_pytype() {$/;"	function	line:216	struct:caffe::NdarrayConverterGenerator::apply::type	signature:()
-NdarrayCallPolicies	/home/ryan/caffe/python/caffe/_caffe.cpp	/^struct NdarrayCallPolicies : public bp::default_call_policies {$/;"	struct	line:222	namespace:caffe	file:
-result_converter	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  typedef NdarrayConverterGenerator result_converter;$/;"	typedef	line:223	struct:caffe::NdarrayCallPolicies	file:
-postcall	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  PyObject* postcall(PyObject* pyargs, PyObject* result) {$/;"	function	line:224	struct:caffe::NdarrayCallPolicies	signature:(PyObject* pyargs, PyObject* result)
-Blob_Reshape	/home/ryan/caffe/python/caffe/_caffe.cpp	/^bp::object Blob_Reshape(bp::tuple args, bp::dict kwargs) {$/;"	function	line:244	namespace:caffe	signature:(bp::tuple args, bp::dict kwargs)
-BlobVec_add_blob	/home/ryan/caffe/python/caffe/_caffe.cpp	/^bp::object BlobVec_add_blob(bp::tuple args, bp::dict kwargs) {$/;"	function	line:258	namespace:caffe	signature:(bp::tuple args, bp::dict kwargs)
-SolverCallback	/home/ryan/caffe/python/caffe/_caffe.cpp	/^class SolverCallback: public Solver<Dtype>::Callback {$/;"	class	line:274	namespace:caffe	file:
-on_start_	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  bp::object on_start_, on_gradients_ready_;$/;"	member	line:276	class:caffe::SolverCallback	file:
-on_gradients_ready_	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  bp::object on_start_, on_gradients_ready_;$/;"	member	line:276	class:caffe::SolverCallback	file:
-SolverCallback	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  SolverCallback(bp::object on_start, bp::object on_gradients_ready)$/;"	function	line:279	class:caffe::SolverCallback	signature:(bp::object on_start, bp::object on_gradients_ready)
-on_gradients_ready	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  virtual void on_gradients_ready() {$/;"	function	line:281	class:caffe::SolverCallback	signature:()
-on_start	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  virtual void on_start() {$/;"	function	line:284	class:caffe::SolverCallback	signature:()
-Solver_add_callback	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Solver_add_callback(Solver<Dtype> * solver, bp::object on_start,$/;"	function	line:289	namespace:caffe	signature:(Solver<Dtype> * solver, bp::object on_start, bp::object on_gradients_ready)
-Solver_add_nccl	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Solver_add_nccl(Solver<Dtype>* solver$/;"	function	line:295	namespace:caffe	signature:(Solver<Dtype>* solver , NCCL<Dtype>* nccl )
-share_weights	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void share_weights(Solver<Dtype>* solver, Net<Dtype>* net) {$/;"	function	line:305	namespace:caffe	signature:(Solver<Dtype>* solver, Net<Dtype>* net)
-NetCallback	/home/ryan/caffe/python/caffe/_caffe.cpp	/^class NetCallback: public Net<Dtype>::Callback {$/;"	class	line:310	namespace:caffe	file:
-NetCallback	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  explicit NetCallback(bp::object run) : run_(run) {}$/;"	function	line:312	class:caffe::NetCallback	signature:(bp::object run)
-run	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  virtual void run(int layer) {$/;"	function	line:315	class:caffe::NetCallback	signature:(int layer)
-run_	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  bp::object run_;$/;"	member	line:318	class:caffe::NetCallback	file:
-Net_before_forward	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Net_before_forward(Net<Dtype>* net, bp::object run) {$/;"	function	line:320	namespace:caffe	signature:(Net<Dtype>* net, bp::object run)
-Net_after_forward	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Net_after_forward(Net<Dtype>* net, bp::object run) {$/;"	function	line:323	namespace:caffe	signature:(Net<Dtype>* net, bp::object run)
-Net_before_backward	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Net_before_backward(Net<Dtype>* net, bp::object run) {$/;"	function	line:326	namespace:caffe	signature:(Net<Dtype>* net, bp::object run)
-Net_after_backward	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Net_after_backward(Net<Dtype>* net, bp::object run) {$/;"	function	line:329	namespace:caffe	signature:(Net<Dtype>* net, bp::object run)
-Net_add_nccl	/home/ryan/caffe/python/caffe/_caffe.cpp	/^void Net_add_nccl(Net<Dtype>* net$/;"	function	line:333	namespace:caffe	signature:(Net<Dtype>* net , NCCL<Dtype>* nccl )
-NCCL	/home/ryan/caffe/python/caffe/_caffe.cpp	/^class NCCL {$/;"	class	line:344	namespace:caffe	file:
-NCCL	/home/ryan/caffe/python/caffe/_caffe.cpp	/^  NCCL(shared_ptr<Solver<Dtype> > solver, const string& uid) {}$/;"	function	line:346	class:caffe::NCCL	signature:(shared_ptr<Solver<Dtype> > solver, const string& uid)
-HasNCCL	/home/ryan/caffe/python/caffe/_caffe.cpp	/^bool HasNCCL() {$/;"	function	line:350	namespace:caffe	signature:()
-NCCL_New_Uid	/home/ryan/caffe/python/caffe/_caffe.cpp	/^bp::object NCCL_New_Uid() {$/;"	function	line:359	namespace:caffe	signature:()
-BOOST_PYTHON_MODULE	/home/ryan/caffe/python/caffe/_caffe.cpp	/^BOOST_PYTHON_MODULE(_caffe) {$/;"	function	line:381	namespace:caffe	signature:(_caffe)
+caffe	/home/ryan/caffe/src/caffe/worker.cpp	/^namespace caffe{$/;"	namespace	line:16	file:
+Worker	/home/ryan/caffe/src/caffe/worker.cpp	/^Worker::Worker(int x){$/;"	function	line:19	class:caffe::Worker	signature:(int x)
+get_threads_num	/home/ryan/caffe/src/caffe/worker.cpp	/^void Worker::get_threads_num(){$/;"	function	line:23	class:caffe::Worker	signature:()
+create_threads	/home/ryan/caffe/src/caffe/worker.cpp	/^void Worker::create_threads(){$/;"	function	line:28	class:caffe::Worker	signature:()
+destroy_threads	/home/ryan/caffe/src/caffe/worker.cpp	/^void Worker::destroy_threads(){$/;"	function	line:41	class:caffe::Worker	signature:()
+worker_thread	/home/ryan/caffe/src/caffe/worker.cpp	/^void Worker::worker_thread(int tid){$/;"	function	line:49	class:caffe::Worker	signature:(int tid)
+assign_workload	/home/ryan/caffe/src/caffe/worker.cpp	/^void Worker::assign_workload(Workload &w){$/;"	function	line:74	class:caffe::Worker	signature:(Workload &w)
+Workload	/home/ryan/caffe/src/caffe/worker.cpp	/^Workload::Workload(int x){$/;"	function	line:83	class:caffe::Workload	signature:(int x)
+get_start	/home/ryan/caffe/src/caffe/worker.cpp	/^int Workload::get_start(int index){$/;"	function	line:90	class:caffe::Workload	signature:(int index)
+get_end	/home/ryan/caffe/src/caffe/worker.cpp	/^int Workload::get_end(int index){$/;"	function	line:99	class:caffe::Workload	signature:(int index)
+set_start	/home/ryan/caffe/src/caffe/worker.cpp	/^void Workload::set_start(int index, int val){$/;"	function	line:108	class:caffe::Workload	signature:(int index, int val)
+set_end	/home/ryan/caffe/src/caffe/worker.cpp	/^void Workload::set_end(int index, int val){$/;"	function	line:117	class:caffe::Workload	signature:(int index, int val)
