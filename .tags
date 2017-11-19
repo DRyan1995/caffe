@@ -2051,7 +2051,8 @@ LossLayer	include/caffe/layers/loss_layer.hpp	/^  explicit LossLayer(const Layer
 LossLayer	include/caffe/layers/loss_layer.hpp	/^class LossLayer : public Layer<Dtype> {$/;"	c	namespace:caffe
 MATLAB_CXXFLAGS	Makefile	/^MATLAB_CXXFLAGS := $(CXXFLAGS) -Wno-uninitialized$/;"	m
 MAT_SO_EXT	Makefile	/^	MAT_SO_EXT := $(shell $(MATLAB_DIR)\/bin\/mexext)$/;"	m
-MAXI	ryan/pipelined_inference.py	/^MAXI = 10$/;"	v
+MAXI	ryan/inference.py	/^MAXI = 20$/;"	v
+MAXI	ryan/pipelined_inference.py	/^MAXI = 20$/;"	v
 MAX_THREAD_NUM	include/caffe/worker.hpp	14;"	d
 MDB_CHECK	include/caffe/util/db_lmdb.hpp	/^inline void MDB_CHECK(int mdb_status) {$/;"	f	namespace:caffe::db
 MEX_ARGS	matlab/+caffe/private/caffe_.cpp	20;"	d	file:

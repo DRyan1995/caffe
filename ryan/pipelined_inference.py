@@ -17,6 +17,7 @@ import lmdb
 import numpy as np
 from caffe.proto import caffe_pb2
 import time
+import copy
 
 caffe.set_mode_cpu()
 
@@ -57,7 +58,8 @@ ws = []
 worker = caffe.Worker(4)
 worker.create_threads()
 
-MAXI = 10
+MAXI = 20
+
 for imgi in range(1,MAXI+1):
     nets.append(caffe.Net('/media/ryan/HDD/deeplearning-cats-dogs-tutorial/caffe_models/caffe_model_1/caffenet_deploy_1.prototxt',
                 '/media/ryan/HDD/deeplearning-cats-dogs-tutorial/caffe_models/caffe_model_1/caffe_model_1_iter_10000.caffemodel',

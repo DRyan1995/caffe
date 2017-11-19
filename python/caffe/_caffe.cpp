@@ -137,13 +137,13 @@ shared_ptr<Net<Dtype> > Net_Init(string network_file, int phase,
 // Legacy Net construct-and-load convenience constructor
 shared_ptr<Net<Dtype> > Net_Init_Load(
     string param_file, string pretrained_param_file, int phase) {
-  LOG(WARNING) << "DEPRECATION WARNING - deprecated use of Python interface";
-  LOG(WARNING) << "Use this instead (with the named \"weights\""
-    << " parameter):";
-  LOG(WARNING) << "Net('" << param_file << "', " << phase
-    << ", weights='" << pretrained_param_file << "')";
-  CheckFile(param_file);
-  CheckFile(pretrained_param_file);
+  // LOG(WARNING) << "DEPRECATION WARNING - deprecated use of Python interface";
+  // LOG(WARNING) << "Use this instead (with the named \"weights\""
+  //   << " parameter):";
+  // LOG(WARNING) << "Net('" << param_file << "', " << phase
+  //   << ", weights='" << pretrained_param_file << "')";
+  // CheckFile(param_file);
+  // CheckFile(pretrained_param_file);
 
   shared_ptr<Net<Dtype> > net(new Net<Dtype>(param_file,
       static_cast<Phase>(phase)));
@@ -404,6 +404,7 @@ BOOST_PYTHON_MODULE(_caffe) {
   bp::def("layer_type_list", &LayerRegistry<Dtype>::LayerTypeList);
 
   bp::class_<Net<Dtype>, shared_ptr<Net<Dtype> >, boost::noncopyable >("Net",
+  // bp::class_<Net<Dtype>, shared_ptr<Net<Dtype> > >("Net",
     bp::no_init)
     // Constructor
     .def("__init__", bp::make_constructor(&Net_Init,
