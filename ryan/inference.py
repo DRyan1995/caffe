@@ -52,7 +52,7 @@ mean_array = np.asarray(mean_blob.data, dtype=np.float32).reshape(
     (mean_blob.channels, mean_blob.height, mean_blob.width))
 
 
-#Read model architecture and trained model's weights
+# Read model architecture and trained model's weights
 net = caffe.Net('/media/ryan/HDD/deeplearning-cats-dogs-tutorial/caffe_models/caffe_model_1/caffenet_deploy_1.prototxt',
                 '/media/ryan/HDD/deeplearning-cats-dogs-tutorial/caffe_models/caffe_model_1/caffe_model_1_iter_10000.caffemodel',
                 caffe.TEST)
@@ -74,11 +74,11 @@ Making predicitions
 # totalTimeSingle = 0
 # totalTimeMulti = 0
 #Making predictions
-MAXI = 20
+MAXI = 10
 for imgi in range(1, MAXI+1):
-    # net = caffe.Net('/media/ryan/HDD/deeplearning-cats-dogs-tutorial/caffe_models/caffe_model_1/caffenet_deploy_1.prototxt',
-    #             '/media/ryan/HDD/deeplearning-cats-dogs-tutorial/caffe_models/caffe_model_1/caffe_model_1_iter_10000.caffemodel',
-    #             caffe.TEST)
+    net = caffe.Net('/media/ryan/HDD/deeplearning-cats-dogs-tutorial/caffe_models/caffe_model_1/caffenet_deploy_1.prototxt',
+                '/media/ryan/HDD/deeplearning-cats-dogs-tutorial/caffe_models/caffe_model_1/caffe_model_1_iter_10000.caffemodel',
+                caffe.TEST)
     img_path = "/media/ryan/HDD/deeplearning-cats-dogs-tutorial/input/test2/{}.jpg".format(imgi)
     img = cv2.imread(img_path, cv2.IMREAD_COLOR)
     img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)

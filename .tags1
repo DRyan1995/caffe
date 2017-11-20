@@ -4,44 +4,21 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-RUN_LOCK	/home/ryan/caffe/src/caffe/net.cpp	/^volatile int RUN_LOCK = 0; \/\/ make sure these worker threads run one by one$/;"	variable	line:24
-caffe	/home/ryan/caffe/src/caffe/net.cpp	/^namespace caffe {$/;"	namespace	line:26	file:
-Net	/home/ryan/caffe/src/caffe/net.cpp	/^Net<Dtype>::Net(const NetParameter& param) {$/;"	function	line:29	class:caffe::Net	signature:(const NetParameter& param)
-Net	/home/ryan/caffe/src/caffe/net.cpp	/^Net<Dtype>::Net(const string& param_file, Phase phase,$/;"	function	line:34	class:caffe::Net	signature:(const string& param_file, Phase phase, const int level, const vector<string>* stages)
-Init	/home/ryan/caffe/src/caffe/net.cpp	/^void Net<Dtype>::Init(const NetParameter& in_param) {$/;"	function	line:50	class:caffe::Net	signature:(const NetParameter& in_param)
-FilterNet	/home/ryan/caffe/src/caffe/net.cpp	/^void Net<Dtype>::FilterNet(const NetParameter& param,$/;"	function	line:265	class:caffe::Net	signature:(const NetParameter& param, NetParameter* param_filtered)
-StateMeetsRule	/home/ryan/caffe/src/caffe/net.cpp	/^bool Net<Dtype>::StateMeetsRule(const NetState& state,$/;"	function	line:295	class:caffe::Net	signature:(const NetState& state, const NetStateRule& rule, const string& layer_name)
-AppendTop	/home/ryan/caffe/src/caffe/net.cpp	/^void Net<Dtype>::AppendTop(const NetParameter& param, const int layer_id,$/;"	function	line:362	class:caffe::Net	signature:(const NetParameter& param, const int layer_id, const int top_id, set<string>* available_blobs, map<string, int>* blob_name_to_idx)
-AppendBottom	/home/ryan/caffe/src/caffe/net.cpp	/^int Net<Dtype>::AppendBottom(const NetParameter& param, const int layer_id,$/;"	function	line:402	class:caffe::Net	signature:(const NetParameter& param, const int layer_id, const int bottom_id, set<string>* available_blobs, map<string, int>* blob_name_to_idx)
-AppendParam	/home/ryan/caffe/src/caffe/net.cpp	/^void Net<Dtype>::AppendParam(const NetParameter& param, const int layer_id,$/;"	function	line:427	class:caffe::Net	signature:(const NetParameter& param, const int layer_id, const int param_id)
-ForwardFromTo	/home/ryan/caffe/src/caffe/net.cpp	/^Dtype Net<Dtype>::ForwardFromTo(int start, int end) {$/;"	function	line:522	class:caffe::Net	signature:(int start, int end)
-loss	/home/ryan/caffe/src/caffe/net.cpp	/^float loss = 0;$/;"	member	line:542	namespace:caffe	file:
-NUM_OF_THREADS	/home/ryan/caffe/src/caffe/net.cpp	/^#define NUM_OF_THREADS /;"	macro	line:543	file:
-ForwardFromTo_func	/home/ryan/caffe/src/caffe/net.cpp	/^void (Net<Dtype>:: ForwardFromTo_func)(int tid, int start, int end) {$/;"	function	line:546	namespace:caffe	signature:(int tid, int start, int end)
-Threaded_ForwardFromTo	/home/ryan/caffe/src/caffe/net.cpp	/^Dtype (Net<Dtype>::Threaded_ForwardFromTo)(int start, int end) {$/;"	function	line:575	namespace:caffe	signature:(int start, int end)
-ForwardFrom	/home/ryan/caffe/src/caffe/net.cpp	/^Dtype Net<Dtype>::ForwardFrom(int start) {$/;"	function	line:599	class:caffe::Net	signature:(int start)
-ForwardTo	/home/ryan/caffe/src/caffe/net.cpp	/^Dtype Net<Dtype>::ForwardTo(int end) {$/;"	function	line:604	class:caffe::Net	signature:(int end)
-Forward	/home/ryan/caffe/src/caffe/net.cpp	/^const vector<Blob<Dtype>*>& Net<Dtype>::Forward(Dtype* loss) {$/;"	function	line:609	class:caffe::Net	signature:(Dtype* loss)
-Forward	/home/ryan/caffe/src/caffe/net.cpp	/^const vector<Blob<Dtype>*>& Net<Dtype>::Forward($/;"	function	line:619	class:caffe::Net	signature:( const vector<Blob<Dtype>*> & bottom, Dtype* loss)
-BackwardFromTo	/home/ryan/caffe/src/caffe/net.cpp	/^void Net<Dtype>::BackwardFromTo(int start, int end) {$/;"	function	line:631	class:caffe::Net	signature:(int start, int end)
-ForwardDebugInfo	/home/ryan/caffe/src/caffe/net.cpp	/^void Net<Dtype>::ForwardDebugInfo(const int layer_id) {$/;"	function	line:650	class:caffe::Net	signature:(const int layer_id)
-BackwardDebugInfo	/home/ryan/caffe/src/caffe/net.cpp	/^void Net<Dtype>::BackwardDebugInfo(const int layer_id) {$/;"	function	line:676	class:caffe::Net	signature:(const int layer_id)
-UpdateDebugInfo	/home/ryan/caffe/src/caffe/net.cpp	/^void Net<Dtype>::UpdateDebugInfo(const int param_id) {$/;"	function	line:703	class:caffe::Net	signature:(const int param_id)
-ShareTrainedLayersWith	/home/ryan/caffe/src/caffe/net.cpp	/^void Net<Dtype>::ShareTrainedLayersWith(const Net* other) {$/;"	function	line:729	class:caffe::Net	signature:(const Net* other)
-BackwardFrom	/home/ryan/caffe/src/caffe/net.cpp	/^void Net<Dtype>::BackwardFrom(int start) {$/;"	function	line:761	class:caffe::Net	signature:(int start)
-BackwardTo	/home/ryan/caffe/src/caffe/net.cpp	/^void Net<Dtype>::BackwardTo(int end) {$/;"	function	line:766	class:caffe::Net	signature:(int end)
-Backward	/home/ryan/caffe/src/caffe/net.cpp	/^void Net<Dtype>::Backward() {$/;"	function	line:771	class:caffe::Net	signature:()
-Reshape	/home/ryan/caffe/src/caffe/net.cpp	/^void Net<Dtype>::Reshape() {$/;"	function	line:790	class:caffe::Net	signature:()
-CopyTrainedLayersFrom	/home/ryan/caffe/src/caffe/net.cpp	/^void Net<Dtype>::CopyTrainedLayersFrom(const NetParameter& param) {$/;"	function	line:797	class:caffe::Net	signature:(const NetParameter& param)
-CopyTrainedLayersFrom	/home/ryan/caffe/src/caffe/net.cpp	/^void Net<Dtype>::CopyTrainedLayersFrom(const string trained_filename) {$/;"	function	line:835	class:caffe::Net	signature:(const string trained_filename)
-CopyTrainedLayersFromBinaryProto	/home/ryan/caffe/src/caffe/net.cpp	/^void Net<Dtype>::CopyTrainedLayersFromBinaryProto($/;"	function	line:844	class:caffe::Net	signature:( const string trained_filename)
-CopyTrainedLayersFromHDF5	/home/ryan/caffe/src/caffe/net.cpp	/^void Net<Dtype>::CopyTrainedLayersFromHDF5(const string trained_filename) {$/;"	function	line:852	class:caffe::Net	signature:(const string trained_filename)
-ToProto	/home/ryan/caffe/src/caffe/net.cpp	/^void Net<Dtype>::ToProto(NetParameter* param, bool write_diff) const {$/;"	function	line:902	class:caffe::Net	signature:(NetParameter* param, bool write_diff) const
-ToHDF5	/home/ryan/caffe/src/caffe/net.cpp	/^void Net<Dtype>::ToHDF5(const string& filename, bool write_diff) const {$/;"	function	line:914	class:caffe::Net	signature:(const string& filename, bool write_diff) const
-Update	/home/ryan/caffe/src/caffe/net.cpp	/^void Net<Dtype>::Update() {$/;"	function	line:971	class:caffe::Net	signature:()
-ClearParamDiffs	/home/ryan/caffe/src/caffe/net.cpp	/^void Net<Dtype>::ClearParamDiffs() {$/;"	function	line:978	class:caffe::Net	signature:()
-ShareWeights	/home/ryan/caffe/src/caffe/net.cpp	/^void Net<Dtype>::ShareWeights() {$/;"	function	line:999	class:caffe::Net	signature:()
-has_blob	/home/ryan/caffe/src/caffe/net.cpp	/^bool Net<Dtype>::has_blob(const string& blob_name) const {$/;"	function	line:1008	class:caffe::Net	signature:(const string& blob_name) const
-blob_by_name	/home/ryan/caffe/src/caffe/net.cpp	/^const shared_ptr<Blob<Dtype> > Net<Dtype>::blob_by_name($/;"	function	line:1013	class:caffe::Net	signature:( const string& blob_name) const
-has_layer	/home/ryan/caffe/src/caffe/net.cpp	/^bool Net<Dtype>::has_layer(const string& layer_name) const {$/;"	function	line:1026	class:caffe::Net	signature:(const string& layer_name) const
-layer_by_name	/home/ryan/caffe/src/caffe/net.cpp	/^const shared_ptr<Layer<Dtype> > Net<Dtype>::layer_by_name($/;"	function	line:1031	class:caffe::Net	signature:( const string& layer_name) const
+IMAGE_WIDTH	/home/ryan/caffe/ryan/pipelined_inference.py	/^IMAGE_WIDTH = 227$/;"	variable	line:25
+IMAGE_HEIGHT	/home/ryan/caffe/ryan/pipelined_inference.py	/^IMAGE_HEIGHT = 227$/;"	variable	line:26
+transform_img	/home/ryan/caffe/ryan/pipelined_inference.py	/^def transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT):$/;"	function	line:32
+start	/home/ryan/caffe/ryan/pipelined_inference.py	/^start = time.time()$/;"	variable	line:44
+mean_blob	/home/ryan/caffe/ryan/pipelined_inference.py	/^mean_blob = caffe_pb2.BlobProto()$/;"	variable	line:50
+mean_array	/home/ryan/caffe/ryan/pipelined_inference.py	/^mean_array = np.asarray(mean_blob.data, dtype=np.float32).reshape($/;"	variable	line:53
+nets	/home/ryan/caffe/ryan/pipelined_inference.py	/^nets = []$/;"	variable	line:56
+ws	/home/ryan/caffe/ryan/pipelined_inference.py	/^ws = []$/;"	variable	line:57
+worker	/home/ryan/caffe/ryan/pipelined_inference.py	/^worker = caffe.Worker(4)$/;"	variable	line:58
+MAXI	/home/ryan/caffe/ryan/pipelined_inference.py	/^MAXI = 10$/;"	variable	line:61
+transformer	/home/ryan/caffe/ryan/pipelined_inference.py	/^    transformer = caffe.io.Transformer({'data': nets[imgi-1].blobs['data'].data.shape})$/;"	variable	line:80
+img_path	/home/ryan/caffe/ryan/pipelined_inference.py	/^    img_path = "\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/{}.jpg".format(imgi)$/;"	variable	line:84
+img	/home/ryan/caffe/ryan/pipelined_inference.py	/^    img = cv2.imread(img_path, cv2.IMREAD_COLOR)$/;"	variable	line:89
+img	/home/ryan/caffe/ryan/pipelined_inference.py	/^    img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)$/;"	variable	line:90
+img_path	/home/ryan/caffe/ryan/pipelined_inference.py	/^    img_path = "\/media\/ryan\/HDD\/deeplearning-cats-dogs-tutorial\/input\/test2\/{}.jpg".format(imgi)$/;"	variable	line:101
+out	/home/ryan/caffe/ryan/pipelined_inference.py	/^    out = nets[imgi-1].output()$/;"	variable	line:102
+pred_probas	/home/ryan/caffe/ryan/pipelined_inference.py	/^    pred_probas = out['prob']$/;"	variable	line:103
+end	/home/ryan/caffe/ryan/pipelined_inference.py	/^end = time.time()$/;"	variable	line:110

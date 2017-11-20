@@ -540,7 +540,7 @@ Dtype Net<Dtype>::ForwardFromTo(int start, int end) {
 // Ryan is hacking here!
 
 float loss = 0;
-#define NUM_OF_THREADS 2
+#define NUM_OF_THREADS 4
 
 template <typename Dtype>
 void (Net<Dtype>:: ForwardFromTo_func)(int tid, int start, int end) {
@@ -554,7 +554,7 @@ void (Net<Dtype>:: ForwardFromTo_func)(int tid, int start, int end) {
   // cout << "Thread " << tid << " initing" << endl;
   // cout << "Start: " << start << "End: " << end << endl;
   //***************************************
-  while (tid != RUN_LOCK) usleep(100);
+  while (tid != RUN_LOCK);
   // cout << "Thread " << tid << " running" << endl;
   for (int i = start; i <= end; ++i) {
     for (int c = 0; c < before_forward_.size(); ++c) {

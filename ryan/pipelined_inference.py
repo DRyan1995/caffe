@@ -58,7 +58,7 @@ ws = []
 worker = caffe.Worker(4)
 worker.create_threads()
 
-MAXI = 20
+MAXI = 10
 
 for imgi in range(1,MAXI+1):
     nets.append(caffe.Net('/media/ryan/HDD/deeplearning-cats-dogs-tutorial/caffe_models/caffe_model_1/caffenet_deploy_1.prototxt',
